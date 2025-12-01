@@ -1,0 +1,1731 @@
+/* =======================================================
+   VARIABLES DE COLOR
+   ======================================================= */
+:root {
+  --color-primary: #4f46e5;
+  --color-secondary: #f97316;
+
+  /* tema oscuro por defecto */
+  --color-bg: #020617;
+  --color-card-bg: #111827;
+  --color-text: #f9fafb;
+  --color-muted: #9ca3af;
+  --color-border: #1f2937;
+
+  --radius-lg: 1rem;
+}
+
+/* =======================================================
+   RESET BÁSICO
+   ======================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(31,41,51,0.7) 0, rgba(2,6,23,0.95) 60%, #000 100%),
+    url("images/bg-dark.jpg") center / cover fixed no-repeat;
+  color: var(--color-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* contenedor principal normal (sin sidecar) */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* =======================================================
+   MODO CLARO
+   ======================================================= */
+body.light-theme {
+  background:
+    linear-gradient(to bottom, rgba(243,244,246,0.85), rgba(243,244,246,0.95)),
+    url("images/bg-light.jpg") center / cover fixed no-repeat;
+  color: #111827;
+}
+
+
+body.light-theme .card,
+body.light-theme .card-producto,
+body.light-theme .mensaje-card,
+body.light-theme .info-item {
+  background: #ffffff;
+  border-color: #e5e7eb;
+}
+
+body.light-theme .total-inventario,
+body.light-theme .inventario-controls {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+body.light-theme .inventario-input {
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+body.light-theme .section-subtitle,
+body.light-theme .producto-desc,
+body.light-theme .nota-enter,
+body.light-theme .mensaje-texto,
+body.light-theme .mensaje-tag,
+body.light-theme .stock-line {
+  color: #4b5563;
+}
+
+body.light-theme .hero-image-inner {
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+}
+
+/* =======================================================
+   HEADER / NAV
+   ======================================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--color-secondary);
+}
+
+.nav-cta a {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.header-actions a,
+.footer-bottom-links a,
+.footer-column-list a {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-actions a::after,
+.footer-bottom-links a::after,
+.footer-column-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+
+.header-actions a:hover::after,
+.footer-bottom-links a:hover::after,
+.footer-column-list a:hover::after {
+  transform: translateX(0);
+}
+
+/* =======================================================
+   BOTONES
+   ======================================================= */
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background-size: 200% 200%;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-position 0.4s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+  background-position: 100% 0;   /* “corre” el gradiente */
+}
+
+.btn-outline {
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  background: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =======================================================
+   HERO
+   ======================================================= */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-title span {
+  color: var(--color-secondary);
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.light-theme .tag {
+  border-color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.9);
+  color: #6b7280;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* HERO IMAGEN */
+.hero-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.6), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.6), transparent 50%);
+  padding: 0.2rem;
+  position: relative;
+}
+
+.hero-image-inner {
+  border-radius: 1.3rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 280px;
+  position: relative;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.hero-image-inner:hover {
+  transform: scale(1.01);
+}
+
+.badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.9rem;
+  font-size: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.badge strong {
+  color: var(--color-secondary);
+}
+
+/* Que la badge del carrusel se vea igual en oscuro y claro */
+.badge {
+  color: #f9fafb;              /* texto siempre clarito */
+}
+
+/* En modo claro, mantenemos la tarjeta oscura y el título naranja */
+body.light-theme .badge {
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+}
+
+body.light-theme .badge strong {
+  color: var(--color-secondary);
+}
+
+
+/* =======================================================
+   SECCIONES / TITULOS
+   ======================================================= */
+.section {
+  margin: 3rem 0 2.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.2rem;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.pill {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+/* =======================================================
+   GRID SOBRE NOSOTROS / ABOUT
+   ======================================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+}
+
+/* =======================================================
+   CARDS GENERALES
+   ======================================================= */
+.card {
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid #111827;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.card h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.86rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* stats */
+.stats {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.stat {
+  font-size: 0.8rem;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+}
+
+
+
+/* =======================================================
+   GRID CARDS PRODUCTOS / SERVICIOS
+   ======================================================= */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem;
+  align-items: stretch;
+}
+
+.badge-type {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.price {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* =======================================================
+   BENEFICIOS
+   ======================================================= */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.benefit-icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* =======================================================
+   INFO GRID / CONTACTO
+   ======================================================= */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.info-item h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* =======================================================
+   TITULOS INVENTARIO
+   ======================================================= */
+.page-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.page-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.top-summary {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.total-inventario {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(15, 23, 42, 0.8);
+  font-size: 0.88rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.total-inventario strong {
+  font-size: 1rem;
+  color: var(--color-secondary);
+}
+
+/* =======================================================
+   GRID PRODUCTOS INVENTARIO
+   ======================================================= */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.card-producto {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-producto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.1);
+}
+
+.chip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: var(--color-muted);
+}
+
+.card-body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.producto-nombre {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.producto-desc {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.producto-precio {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.producto-precio strong {
+  color: var(--color-secondary);
+}
+
+.stock-line {
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+  color: var(--color-muted);
+}
+
+.stock-line strong {
+  color: var(--color-text);
+}
+
+/* controles inventario */
+.inventario-controls {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.inventario-label {
+  color: var(--color-muted);
+}
+
+.inventario-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.inventario-input {
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: #020617;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.inventario-input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.5);
+}
+
+.nota-enter {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* =======================================================
+   MENSAJE FINAL INVENTARIO
+   ======================================================= */
+.mensaje-final {
+  margin-top: 2.5rem;
+}
+
+.mensaje-card {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.12),
+    rgba(249, 115, 22, 0.25)
+  );
+  border-radius: 1.3rem;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.mensaje-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.mensaje-texto {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
+}
+
+.mensaje-lista {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+}
+
+.mensaje-tag {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.7);
+  font-size: 0.78rem;
+}
+
+/* =======================================================
+   FOOTER SIMPLE (solo para footers sin clase .site-footer)
+   ======================================================= */
+footer:not(.site-footer) {
+  margin-top: 2rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid #111827;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* =======================================================
+   FOOTER ESTILO “NIKE”
+   ======================================================= */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2.2rem 0 1.4rem;
+  border-top: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  display: block;
+}
+
+body.light-theme .site-footer {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* que todo el contenido del footer use el mismo ancho que .page */
+.footer-main,
+.footer-social-row,
+.footer-bottom {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* parte principal con columnas */
+.footer-main {
+  display: flex;
+  justify-content: flex-start;   /* columnas arrancan a la izquierda */
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column {
+  background: #000000;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* en modo claro también se mantienen negros, solo cambia el fondo del footer */
+body.light-theme .footer-column {
+  background: #000000;
+}
+
+.footer-column-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.footer-column-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column-list li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-column-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-column-list a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* redes */
+.footer-social-row {
+  display: flex;
+  justify-content: flex-end;  /* botón @ alineado a la derecha */
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  background: transparent;
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.15s ease;
+}
+
+body.light-theme .social-btn {
+  border-color: rgba(209, 213, 219, 0.9);
+  color: #f9fafb;
+}
+
+.social-btn:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* barra inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(55, 65, 81, 0.9);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.78rem;
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.footer-country {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.footer-bottom-links a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-bottom-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* =======================================================
+   SLIDER HERO (flechas)
+   ======================================================= */
+.hero-image {
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+body.light-theme .slider-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.slider-btn-left {
+  left: 0.6rem;
+}
+
+.slider-btn-right {
+  right: 0.6rem;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+.hero-image-inner {
+  position: relative;
+  z-index: 1;
+}
+/* ===========================
+   CARRUSEL HERO TALLER
+   =========================== */
+.hero-image {
+  position: relative;
+  flex: 1;
+  min-height: 260px;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Flechas del carrusel */
+.hero-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.hero-carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-carousel-prev {
+  left: 0.7rem;
+}
+
+.hero-carousel-next {
+  right: 0.7rem;
+}
+
+/* Puntitos */
+.hero-carousel-dots {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.hero-carousel-dot.is-active {
+  width: 18px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Ajuste para que la badge quede encima de todo */
+.hero-slide .badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+
+/* =======================================================
+   SIDECAR IZQUIERDO
+   ======================================================= */
+.layout-with-sidecar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.layout-with-sidecar .page {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidecar {
+  position: sticky;
+  top: 1.5rem;
+  min-width: 60px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  padding: 0.6rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  z-index: 5;
+}
+
+body.light-theme .sidecar {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.sidecar-item {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidecar-item:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-text);
+  background: rgba(249, 115, 22, 0.12);
+}
+
+.sidecar-item-active {
+  border-color: var(--color-secondary);
+  color: var(--color-text);
+  background: rgba(249, 115, 22, 0.2);
+}
+
+.sidecar-label {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  margin-top: 0.1rem;
+}
+
+/* =======================================================
+   RESPONSIVE
+   ======================================================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image-inner {
+    min-height: 220px;
+  }
+
+  .footer-social-row {
+    justify-content: flex-start; /* en mobile el @ se va a la izquierda */
+  }
+}
+
+@media (max-width: 900px) {
+  .layout-with-sidecar {
+    padding: 1.25rem 1.1rem 2.5rem;
+    display: block;
+  }
+
+  .sidecar {
+    display: none;
+  }
+}
+
+/* Separa visualmente las secciones de clientes y videos en clientes.html */
+#clientes .grid-cards {
+  margin-bottom: 3.5rem;
+}
+
+#videos {
+  margin-top: 3rem;
+}
+
+/* =======================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ======================================================= */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366; /* verde WhatsApp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+}
+
+/* en pantallas muy chicas, dale un poquito más de margen para que no tape nada importante */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* =======================================================
+   EFECTO HOVER EN FOTOS (INVENTARIO + CLIENTES/VIDEOS)
+   ======================================================= */
+
+/* Todas las imágenes de cards + iframes de videos dentro de cards */
+.card-img,
+.card iframe {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* Imágenes de cards normales (clientes, modelos, etc.) */
+.card:hover .card-img,
+.card:hover iframe {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  filter: brightness(1.05);
+}
+
+/* Imágenes de productos del inventario */
+.card-producto .card-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.card-producto:hover .card-img {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  filter: brightness(1.05);
+}
+
+/* ============================
+   FOOTER ESTILO MARCA / NIKE
+   ============================ */
+
+.site-footer {
+  margin-top: auto;                 /* clave: baja el footer al fondo */
+  padding-top: 2.2rem;
+  padding-bottom: 1.4rem;
+  border-top: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.75);  /* banda oscura en modo oscuro */
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+/* MODO CLARO:
+   - sin fondo sólido, se ve el bg-light
+   - solo una línea suave y texto gris
+*/
+body.light-theme .site-footer {
+  background: transparent;
+  color: #4b5563;
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+/* parte principal con columnas */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+body.light-theme .footer-column-title {
+  color: #111827;
+}
+
+.footer-column-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column-list li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-column-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-column-list a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* FILA DE REDES SOCIALES */
+.footer-social-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.9);
+  background: transparent;
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+body.light-theme .social-btn {
+  border-color: rgba(209,213,219,0.9);
+  color: #111827;
+}
+
+.social-btn:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* BARRA INFERIOR */
+.footer-bottom {
+  border-top: 1px solid rgba(55,65,81,0.9);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.78rem;
+}
+
+/* línea más suave en modo claro */
+body.light-theme .footer-bottom {
+  border-top: 1px solid rgba(229,231,235,0.8);
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.footer-country {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.9);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+body.light-theme .footer-country {
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.footer-bottom-links a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-bottom-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+/* BOTÓN FLOTANTE "VOLVER ARRIBA" */
+.scroll-top-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  background: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+body.light-theme .scroll-top-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  border-color: rgba(209, 213, 219, 0.9);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* HEADER STICKY CON BLUR */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.7),
+    transparent
+  );
+}
+
+/* en modo claro, un blur más clarito */
+body.light-theme header {
+  background: linear-gradient(
+    to bottom,
+    rgba(249, 250, 251, 0.98),
+    rgba(249, 250, 251, 0.8),
+    transparent
+  );
+}
+/* REVEAL SUAVE EN SCROLL */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===========================
+   SECCIÓN TALLER - DOS FOTOS (ESTILO VERSACE)
+   =========================== */
+
+.taller-duo-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.taller-duo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.taller-duo-item {
+  position: relative;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+/* degradado para leer mejor el texto */
+.taller-duo-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.taller-duo-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.9rem;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: default;
+  z-index: 1;
+}
+
+/* responsive: en mobile se apilan */
+@media (max-width: 768px) {
+  .taller-duo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taller-duo-item {
+    min-height: 260px;
+  }
+}
+/* ===========================
+   HOVER PARA FOTOS DEL TALLER
+   =========================== */
+
+/* HERO: solo se puede hacer hover en el slide activo */
+.hero-carousel {
+  overflow: hidden;
+}
+
+.hero-slide {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* zoom suave cuando paso el mouse por la foto activa */
+.hero-slide.is-active:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* ===========================
+   HOVER EN SECCIÓN ESTILO VERSACE
+   =========================== */
+
+.taller-duo-item {
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* leve zoom + sombra, como tus otras cards */
+.taller-duo-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* botón blanco también reacciona un poquito */
+.taller-duo-cta {
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.taller-duo-item:hover .taller-duo-cta {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-50%) translateY(-2px);
+}
+/* Logo en HERO de Comunidad */
+
+.hero-image-inner--logo {
+  background-color: #000;          /* fondo negro como antes */
+  position: relative;
+  overflow: hidden;
+}
+
+/* que el logo siempre se vea centrado */
+.hero-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* ==========================================
+   FOOTER NUEVO (OSCURE / CLARO)
+   ========================================== */
+
+/* Banda de fondo del footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2.2rem 0 1.6rem;
+  border-top: 1px solid var(--color-border);
+  background: radial-gradient(circle at top,
+              rgba(15,23,42,0.9) 0,
+              rgba(15,23,42,0.95) 40%,
+              #020617 100%);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+/* En modo claro: fondo clarito tipo tarjeta, no tan pesado */
+body.light-theme .site-footer {
+  background: linear-gradient(
+    to top,
+    #f3f4f6 0,
+    #f9fafb 35%,
+    transparent 100%
+  );
+  color: #4b5563;
+  border-top: 1px solid rgba(229,231,235,0.9);
+  box-shadow: 0 -12px 35px rgba(15,23,42,0.08);
+}
+
+/* Contenedor interno alineado con .page */
+.footer-main,
+.footer-social-row,
+.footer-bottom {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Columnas como “tarjetas” */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.footer-column {
+  border-radius: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(15,23,42,0.98);
+  border: 1px solid rgba(148,163,184,0.55);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+/* En modo claro: tarjetas blancas con sombra suave */
+body.light-theme .footer-column {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.10);
+}
+
+.footer-column-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #f9fafb;
+}
+
+/* Título oscuro en modo claro */
+body.light-theme .footer-column-title {
+  color: #111827;
+}
+
+.footer-column-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column-list li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-column-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.footer-column-list a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Botón @ redes */
+.footer-social-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.9);
+  background: transparent;
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.15s ease;
+}
+
+/* En claro: círculo blanco con borde gris */
+body.light-theme .social-btn {
+  background: #ffffff;
+  border-color: rgba(209,213,219,0.9);
+  color: #111827;
+}
+
+.social-btn:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+/* Barra inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(31,41,55,0.75);
+  padding-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.78rem;
+}
+
+/* Línea más suave en modo claro */
+body.light-theme .footer-bottom {
+  border-top: 1px solid rgba(229,231,235,0.9);
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.footer-country {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.9);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+/* Pill clarito en modo claro */
+body.light-theme .footer-country {
+  border-color: #d1d5db;
+  background: #ffffff;
+  color: #111827;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.footer-bottom-links a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-bottom-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+/* Footer en modo claro: sin recuadro, solo la línea */
+body.light-theme .site-footer {
+  background: transparent;        /* sin fondo */
+  box-shadow: none;               /* sin sombra hacia arriba */
+}
+
+/* por si acaso, que el área interior tampoco pinte nada raro */
+body.light-theme .footer-main,
+body.light-theme .footer-social-row,
+body.light-theme .footer-bottom {
+  background: transparent;
+}

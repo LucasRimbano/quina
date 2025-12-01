@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>QUINA · HANDPAN — Nuestro taller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        QUINA<span>.HANDPAN</span>
+      </div>
+      <div class="header-actions">
+        <a href="quina-handpan.html" class="btn btn-outline">Inicio</a>
+        <a href="clientes.html" class="btn btn-outline">Comunidad</a>
+        <a href="taller.html" class="btn btn-primary">Nuestro taller</a>
+        <button class="btn btn-outline" id="themeToggle">Modo claro</button>
+      </div>
+    </header>
+        <!-- HERO TALLER CON CARRUSEL (3 FOTOS) -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          Nuestro taller<span> · donde se dan todos nuestros sueños</span>
+        </h1>
+        <p class="hero-subtitle">
+          Este es el espacio donde nacen los handpans QUINA: un taller pensado para experimentar, afinar
+          y crear instrumentos que acompañen meditaciones, shows en vivo y nuevas músicas.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Hecho a mano</span>
+          <span class="tag">Trabajo artesanal</span>
+          <span class="tag">Sueños en acero</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#espacio" class="btn btn-primary">
+            Conocer el espacio
+          </a>
+          <a href="#visitas" class="btn btn-outline">
+            Consultar visitas al taller
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Nuestro taller: donde se da todo, desde la primera idea hasta el último detalle de afinación.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-carousel" id="tallerCarousel">
+
+          <!-- SLIDE 1 -->
+          <div
+            class="hero-slide is-active"
+            style="background-image:url('images/herramientas.jpeg');"
+          >
+            <div class="badge">
+              <div><strong>Herramientas del taller</strong></div>
+              <div style="font-size:0.7rem; margin-top:0.2rem;">
+                El espacio donde se arma cada QUINA a mano.
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div
+            class="hero-slide"
+            style="background-image:url('images/martillando.jpeg');"
+          >
+            <div class="badge">
+              <div><strong>Martillando la chapa</strong></div>
+              <div style="font-size:0.7rem; margin-top:0.2rem;">
+                Golpes precisos para darle forma al instrumento.
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div
+            class="hero-slide"
+            style="background-image:url('images/handArbol.jpeg');"
+          >
+            <div class="badge">
+              <div><strong>Handpan terminado</strong></div>
+              <div style="font-size:0.7rem; margin-top:0.2rem;">
+                Listo para sonar en nuevos paisajes.
+              </div>
+            </div>
+          </div>
+
+          <!-- FLECHAS -->
+          <button
+            class="hero-carousel-arrow hero-carousel-prev"
+            type="button"
+            aria-label="Foto anterior"
+          >
+            ‹
+          </button>
+          <button
+            class="hero-carousel-arrow hero-carousel-next"
+            type="button"
+            aria-label="Foto siguiente"
+          >
+            ›
+          </button>
+
+          <!-- PUNTITOS (3) -->
+          <div class="hero-carousel-dots">
+            <button class="hero-carousel-dot is-active" type="button" aria-label="Ir a la foto 1"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Ir a la foto 2"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Ir a la foto 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- SECCIÓN VISUAL ESTILO VERSACE (2 FOTOS) -->
+    <section class="taller-duo-section">
+      <div class="taller-duo-grid">
+        <div
+          class="taller-duo-item"
+          style="background-image:url('images/TapaPegando.jpeg');"
+        >
+          <button class="taller-duo-cta">
+            Proceso de construcción
+          </button>
+        </div>
+        <div
+          class="taller-duo-item"
+          style="background-image:url('images/tapadebajonotas2.jpeg');"
+        >
+          <button class="taller-duo-cta">
+            Detalle de notas
+          </button>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-column">
+          <h4 class="footer-column-title">QUINA · HANDPAN</h4>
+          <ul class="footer-column-list">
+            <li><a href="quina-handpan.html#modelos">Modelos</a></li>
+            <li><a href="quina-handpan.html#historia">Historia del handpan</a></li>
+            <li><a href="quina-handpan.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column-title">Nuestro taller</h4>
+          <ul class="footer-column-list">
+            <li><a href="#espacio">El espacio</a></li>
+            <li><a href="#visitas">Visitas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social-row">
+        <button class="social-btn" aria-label="Instagram">@</button>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span class="footer-country">Argentina</span>
+          <span>© 2025 QUINA · HANDPAN. Instrumentos artesanales de percusión melódica.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/541141601929"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chatear por WhatsApp con QUINA · HANDPAN"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="16" fill="none"></circle>
+      <path
+        d="M16 6C10.5 6 6 10.4 6 15.9C6 18.1 6.7 20 8 21.7L6.5 26L11 24.6C12.6 25.6 14.3 26 16.1 26C21.6 26 26 21.6 26 16.1C26 10.4 21.5 6 16 6Z
+           M16.1 23.9C14.6 23.9 13.2 23.5 11.9 22.7L11.6 22.5L9.3 23.2L10 21L9.8 20.7C8.8 19.5 8.3 18 8.3 16.4C8.3 12 11.8 8.6 16.1 8.6
+           C20.3 8.6 23.7 12 23.7 16.3C23.7 20.6 20.3 23.9 16.1 23.9Z
+           M20.2 18.4C19.9 18.2 18.6 17.6 18.3 17.5C18 17.4 17.8 17.3 17.6 17.6C17.4 17.8 17 18.2 16.8 18.4
+           C16.6 18.6 16.4 18.6 16.1 18.4C15.1 18 13.9 17 13.3 16.3C12.8 15.6 12.4 14.8 12.7 14.4C12.9 14.2 13 14 13.2 13.8
+           C13.3 13.7 13.4 13.5 13.5 13.3C13.6 13.1 13.5 12.9 13.4 12.8C13.2 12.7 12.2 12.2 11.9 12.1C11.6 12 11.4 12 11.2 12.1
+           C11 12.2 10.7 12.5 10.6 12.7C10.4 13.1 10.3 13.7 10.4 14.3C10.6 15.1 11.1 16 11.8 17C12.6 18 13.6 18.9 14.7 19.5
+           C15.3 19.8 15.9 20.1 16.5 20.3C17.1 20.5 17.6 20.5 18.1 20.4C18.7 20.3 19.3 19.9 19.6 19.5C19.9 19.1 20 18.7 20 18.5
+           C20 18.5 20.2 18.4 20.2 18.4Z"
+        fill="white"
+      ></path>
+    </svg>
+  </a>
+
+  <!-- BOTÓN FLOTANTE VOLVER ARRIBA -->
+  <button
+    class="scroll-top-btn"
+    id="scrollTopBtn"
+    aria-label="Volver arriba"
+    type="button"
+  >
+    ↑
+  </button>
+
+  <script>
+    // =============================
+    // MODO CLARO / OSCURO
+    // =============================
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById("themeToggle");
+      const KEY = "site_theme";
+
+      if (!toggle) return;
+
+      function applyTheme(theme) {
+        if (theme === "light") {
+          body.classList.add("light-theme");
+          toggle.textContent = "Modo oscuro";
+        } else {
+          body.classList.remove("light-theme");
+          toggle.textContent = "Modo claro";
+        }
+      }
+
+      const saved = localStorage.getItem(KEY) || "dark";
+      applyTheme(saved);
+
+      toggle.addEventListener("click", () => {
+        const next = body.classList.contains("light-theme") ? "dark" : "light";
+        applyTheme(next);
+        localStorage.setItem(KEY, next);
+      });
+    })();
+
+    // =============================
+    // BOTÓN VOLVER ARRIBA
+    // =============================
+    (function () {
+      const btnTop = document.getElementById("scrollTopBtn");
+      if (!btnTop) return;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          btnTop.classList.add("is-visible");
+        } else {
+          btnTop.classList.remove("is-visible");
+        }
+      });
+
+      btnTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    })();
+
+    // =============================
+    // CARRUSEL TALLER
+    // =============================
+    (function () {
+      const carousel = document.getElementById("tallerCarousel");
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
+      const dots = Array.from(carousel.querySelectorAll(".hero-carousel-dot"));
+      const prevBtn = carousel.querySelector(".hero-carousel-prev");
+      const nextBtn = carousel.querySelector(".hero-carousel-next");
+
+      let current = 0;
+      let timer = null;
+      const INTERVAL = 5000; // 5 segundos
+
+      function goToSlide(index) {
+        if (!slides.length) return;
+
+        current = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("is-active", i === current);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("is-active", i === current);
+        });
+      }
+
+      function nextSlide() {
+        goToSlide(current + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(current - 1);
+      }
+
+      function startAuto() {
+        stopAuto();
+        timer = setInterval(nextSlide, INTERVAL);
+      }
+
+      function stopAuto() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          nextSlide();
+          startAuto();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          prevSlide();
+          startAuto();
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+          startAuto();
+        });
+      });
+
+      carousel.addEventListener("mouseenter", stopAuto);
+      carousel.addEventListener("mouseleave", startAuto);
+
+      goToSlide(0);
+      startAuto();
+    })();
+  </script>
+</body>
+</html>

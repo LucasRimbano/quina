@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>QUINA · HANDPAN — Instrumentos artesanales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        QUINA<span>.HANDPAN</span>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-outline">Plantilla base</a>
+        <a href="#modelos" class="btn btn-outline">Modelos</a>
+        <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
+          ✉️ WhatsApp
+        </button>
+        <button class="btn btn-outline" id="themeToggle">Modo claro</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- COLUMNA IZQUIERDA -->
+      <div>
+        <h1 class="hero-title">
+          Handpans artesanales <span>fabricados en Argentina</span>
+        </h1>
+        <p class="hero-subtitle">
+          QUINA · HANDPAN se dedica a la creación de instrumentos de percusión melódica en acero inoxidable.
+          Cada handpan está afinado a mano, pensado para exploración sonora, meditación y música en vivo.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Fabricación artesanal</span>
+          <span class="tag">Acero inoxidable</span>
+          <span class="tag">Sonido meditación</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#modelos" class="btn btn-primary">
+            Ver modelos disponibles
+          </a>
+          <a href="#historia" class="btn btn-outline">
+            Conocer la historia del handpan
+          </a>
+        </div>
+
+        <p class="hero-note">
+          QUINA · HANDPAN 🇦🇷 · 73 publicaciones
+        </p>
+
+        <!-- STATS DEBAJO DEL TEXTO (rectángulo de abajo que marcaste) -->
+        <div class="stats" id="stats">
+          <div class="stat">
+            <strong data-count="5">0</strong>
+            años construyendo handpans
+          </div>
+          <div class="stat">
+            <strong data-count="48">0</strong>
+            instrumentos entregados
+          </div>
+          <div class="stat">
+            <strong data-count="1700">0</strong>
+            seguidores en Instagram
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: FOTO QUINA -->
+      <div class="hero-image">
+        <div class="hero-image-inner hero-image-inner--logo">
+          <img
+            src="images/logo-quina.png"
+            alt="Logo QUINA · HANDPAN"
+            class="hero-logo-img"
+          />
+          <div class="badge">
+            <div><strong>Hecho a mano</strong> en acero inoxidable</div>
+            <div style="font-size:0.7rem; margin-top:0.2rem;">
+              Cada instrumento es único, construido y afinado nota por nota.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELOS DESTACADOS -->
+    <section class="section" id="modelos">
+      <div class="section-header">
+        <div>
+          <div class="pill">Modelos destacados</div>
+          <h2 class="section-title">Handpans listos para tocar</h2>
+        </div>
+        <p class="section-subtitle">
+          Ejemplo de cómo tu hermano puede presentar sus afinaciones y configuraciones principales. Después solo
+          tiene que ajustar textos, precios y disponibilidad reales.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <!-- Modelo 1 -->
+        <article class="card">
+          <img
+            src="https://images.pexels.com/photos/10685425/pexels-photo-10685425.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Handpan D Kurd"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Handpan 9 notas</div>
+          <h3>D Kurd · Acero inoxidable</h3>
+          <p>
+            Uno de los modos más versátiles y melódicos. Ataque suave, sustain largo y afinación pensada para
+            improvisar fácilmente, incluso si recién empezás.
+          </p>
+          <div class="price">
+            Ejemplo de inversión desde <strong>$X.XXX.XXX</strong>
+          </div>
+        </article>
+
+        <!-- Modelo 2 -->
+        <article class="card">
+          <img
+            src="https://images.pexels.com/photos/3824770/pexels-photo-3824770.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Handpan Celtic Minor"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Handpan 10 notas</div>
+          <h3>Celtic Minor · Color bronce</h3>
+          <p>
+            Escala con carácter cinematográfico y emotivo. Ideal para música relajante, acompañar cuencos,
+            o presentaciones solistas.
+          </p>
+          <div class="price">
+            Consultar afinaciones disponibles y tiempos de entrega.
+          </div>
+        </article>
+
+        <!-- Modelo 3 -->
+        <article class="card">
+          <img
+            src="https://images.pexels.com/photos/5614633/pexels-photo-5614633.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Handpan personalizado"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Custom</div>
+          <h3>Handpan a medida</h3>
+          <p>
+            Afinaciones personalizadas, elección de escala, acabado y detalles estéticos. Ideal para músicos que
+            ya tienen experiencia o buscan un sonido muy específico.
+          </p>
+          <div class="price">
+            Proyecto a medida · <strong>charlar por WhatsApp</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HISTORIA DEL HANDPAN -->
+    <section class="section" id="historia">
+      <div class="section-header">
+        <div>
+          <div class="pill">Historia</div>
+          <h2 class="section-title">¿Qué es un handpan?</h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Un instrumento joven con raíces profundas</h3>
+          <p>
+            El handpan es un instrumento de percusión melódica creado a comienzos de los 2000, inspirado en el steelpan
+            caribeño y en instrumentos tradicionales de India y Medio Oriente. Se toca con las manos y combina ritmo,
+            melodía y armonía en un solo instrumento.
+          </p>
+          <p style="margin-top:0.6rem;">
+            Su sonido suele describirse como envolvente, meditativo y muy expresivo, por eso se usa tanto en
+            música relajante, sesiones de yoga, sound healing y presentaciones en vivo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>El enfoque de QUINA · HANDPAN</h3>
+          <p>
+            Cada handpan se construye en acero inoxidable, se moldea y se afina manualmente, controlando la respuesta
+            de cada nota para lograr:
+          </p>
+          <ul style="margin-top:0.5rem; padding-left:1.1rem; font-size:0.85rem; color:var(--color-muted);">
+            <li>Buen sustain sin perder definición en el ataque.</li>
+            <li>Escalas pensadas para que suene bien incluso improvisando.</li>
+            <li>Instrumentos duraderos, listos para giras, escenarios o espacios al aire libre.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO ARTESANAL -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="pill">Proceso artesanal</div>
+          <h2 class="section-title">Cómo nace un handpan QUINA</h2>
+        </div>
+      </div>
+
+      <div class="benefits">
+        <div class="card">
+          <div class="benefit-icon">🦾</div>
+          <h3>Fabricación manual</h3>
+          <p>
+            Modelado del acero, tratamiento térmico y conformado de cada nota de manera individual.
+          </p>
+        </div>
+        <div class="card">
+          <div class="benefit-icon">🎼</div>
+          <h3>Afinación por etapas</h3>
+          <p>
+            Afinación inicial, asentamiento del material y microajustes hasta lograr estabilidad y precisión.
+          </p>
+        </div>
+        <div class="card">
+          <div class="benefit-icon">🎧</div>
+          <h3>Test de sonido real</h3>
+          <p>
+            Pruebas grabadas y tocadas en contexto musical para asegurar un instrumento listo para grabar o tocar en vivo.
+          </p>
+        </div>
+        <div class="card">
+          <div class="benefit-icon">🧼</div>
+          <h3>Cuidado y mantenimiento</h3>
+          <p>
+            Asesoramiento sobre limpieza, protección y transporte para que el instrumento te acompañe muchos años.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="section-header">
+        <div>
+          <div class="pill">Contacto</div>
+          <h2 class="section-title">Encargá tu handpan o hacé tu consulta</h2>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="card info-item">
+          <h4>WhatsApp directo</h4>
+          <p>
+            Número de contacto: <br>
+            <strong>+54 9 11 4160-1929</strong><br><br>
+            <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
+              Escribir por WhatsApp
+            </button>
+          </p>
+        </div>
+
+        <div class="card info-item">
+          <h4>Instagram</h4>
+          <p>
+            Seguinos en <strong>@quina.handpan</strong> para ver videos, procesos de fabricación,
+            nuevos modelos y disponibilidad actual.
+          </p>
+        </div>
+
+        <div class="card info-item">
+          <h4>Uso de esta página</h4>
+          <p>
+            Esta web es una base que se puede adaptar fácilmente: sumar más modelos, demos de audio,
+            preguntas frecuentes o un formulario de reserva para talleres y clínicas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-column">
+          <h4 class="footer-column-title">QUINA · HANDPAN</h4>
+          <ul class="footer-column-list">
+            <li><a href="#modelos">Modelos</a></li>
+            <li><a href="#historia">Historia del handpan</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column-title">Redes</h4>
+          <ul class="footer-column-list">
+            <li><a href="https://www.instagram.com/quina.handpan" target="_blank">@quina.handpan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column-title">Plantillas</h4>
+          <ul class="footer-column-list">
+            <li><a href="index.html">Página demo emprendimientos</a></li>
+            <li><a href="inventario.html">Catálogo + stock</a></li>
+            <li><a href="inventario2.html">Inventario deportivo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column-title">Extras</h4>
+          <ul class="footer-column-list">
+            <li><a href="#">Demos de audio (a agregar)</a></li>
+            <li><a href="#">Talleres y clínicas</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social-row">
+        <button class="social-btn" aria-label="Instagram">@</button>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span class="footer-country">Argentina</span>
+          <span>© 2025 QUINA · HANDPAN. Instrumentos artesanales de percusión melódica.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/541141601929"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chatear por WhatsApp con QUINA · HANDPAN"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="16" fill="none"></circle>
+      <path
+        d="M16 6C10.5 6 6 10.4 6 15.9C6 18.1 6.7 20 8 21.7L6.5 26L11 24.6C12.6 25.6 14.3 26 16.1 26C21.6 26 26 21.6 26 16.1C26 10.4 21.5 6 16 6Z
+           M16.1 23.9C14.6 23.9 13.2 23.5 11.9 22.7L11.6 22.5L9.3 23.2L10 21L9.8 20.7C8.8 19.5 8.3 18 8.3 16.4C8.3 12 11.8 8.6 16.1 8.6
+           C20.3 8.6 23.7 12 23.7 16.3C23.7 20.6 20.3 23.9 16.1 23.9Z
+           M20.2 18.4C19.9 18.2 18.6 17.6 18.3 17.5C18 17.4 17.8 17.3 17.6 17.6C17.4 17.8 17 18.2 16.8 18.4
+           C16.6 18.6 16.4 18.6 16.1 18.4C15.1 18 13.9 17 13.3 16.3C12.8 15.6 12.4 14.8 12.7 14.4C12.9 14.2 13 14 13.2 13.8
+           C13.3 13.7 13.4 13.5 13.5 13.3C13.6 13.1 13.5 12.9 13.4 12.8C13.2 12.7 12.2 12.2 11.9 12.1C11.6 12 11.4 12 11.2 12.1
+           C11 12.2 10.7 12.5 10.6 12.7C10.4 13.1 10.3 13.7 10.4 14.3C10.6 15.1 11.1 16 11.8 17C12.6 18 13.6 18.9 14.7 19.5
+           C15.3 19.8 15.9 20.1 16.5 20.3C17.1 20.5 17.6 20.5 18.1 20.4C18.7 20.3 19.3 19.9 19.6 19.5C19.9 19.1 20 18.7 20 18.5
+           C20 18.5 20.2 18.4 20.2 18.4Z"
+        fill="white"
+      ></path>
+    </svg>
+  </a>
+
+  <!-- BOTÓN FLOTANTE SUBIR ARRIBA -->
+  <a
+    href="#"
+    class="scroll-top-btn"
+    aria-label="Volver arriba"
+  >
+    ↑
+  </a>
+
+  <script>
+    // =============================
+    // MODO CLARO / OSCURO
+    // =============================
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById("themeToggle");
+      const KEY = "site_theme";
+
+      if (!toggle) return;
+
+      function applyTheme(theme) {
+        if (theme === "light") {
+          body.classList.add("light-theme");
+          toggle.textContent = "Modo oscuro";
+        } else {
+          body.classList.remove("light-theme");
+          toggle.textContent = "Modo claro";
+        }
+      }
+
+      const saved = localStorage.getItem(KEY) || "dark";
+      applyTheme(saved);
+
+      toggle.addEventListener("click", () => {
+        const next = body.classList.contains("light-theme") ? "dark" : "light";
+        applyTheme(next);
+        localStorage.setItem(KEY, next);
+      });
+    })();
+
+    // =============================
+    // REVEAL EN SCROLL (si usás .reveal)
+    // =============================
+    (function () {
+      const elements = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || !elements.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    })();
+
+    // =============================
+    // CONTADOR SUAVE DE STATS
+    // =============================
+    (function () {
+      const statsSection = document.getElementById("stats");
+      if (!statsSection) return;
+
+      const counters = statsSection.querySelectorAll("[data-count]");
+      if (!counters.length) return;
+
+      function animateCounter(el) {
+        const target = Number(el.getAttribute("data-count")) || 0;
+        let current = 0;
+        const duration = 1200; // ms
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value.toLocaleString("es-AR");
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              counters.forEach(animateCounter);
+              obs.disconnect(); // solo una vez
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(statsSection);
+    })();
+  </script>
+</body>
+</html>

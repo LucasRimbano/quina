@@ -1729,3 +1729,17 @@ body.light-theme .footer-social-row,
 body.light-theme .footer-bottom {
   background: transparent;
 }
+/* =======================================================
+   BARRA DE PROGRESO DE SCROLL
+   ======================================================= */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  z-index: 999;
+  transform-origin: left;
+  pointer-events: none;
+}

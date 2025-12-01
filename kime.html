@@ -17,18 +17,30 @@
   <div class="page">
     <!-- HEADER -->
     <header>
-      <div class="logo">
-        QUINA<span>.HANDPAN</span>
-      </div>
-      <div class="header-actions">
-        <a href="index.html" class="btn btn-outline">Plantilla base</a>
-        <a href="#modelos" class="btn btn-outline">Modelos</a>
-        <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
-          ✉️ WhatsApp
-        </button>
-        <button class="btn btn-outline" id="themeToggle">Modo claro</button>
-      </div>
-    </header>
+  <div class="logo">
+    QUINA<span>.HANDPAN</span>
+  </div>
+  <div class="header-actions">
+    
+    <!-- Sección interna de esta página -->
+    <a href="#modelos" class="btn btn-outline">Modelos</a>
+
+    <!-- NUEVO: página de clientes / comunidad -->
+    <a href="clientes.html" class="btn btn-outline">Comunidad</a>
+
+    <!-- NUEVO: página del taller -->
+    <a href="taller.html" class="btn btn-outline">Nuestro taller</a>
+
+    <!-- WhatsApp -->
+    <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
+      ✉️ WhatsApp
+    </button>
+
+    <!-- Modo claro/oscuro -->
+    <button class="btn btn-outline" id="themeToggle">Modo claro</button>
+  </div>
+</header>
+
 
     <!-- HERO -->
     <section class="hero">
@@ -112,9 +124,12 @@
       <div class="grid-cards">
         <!-- Modelo 1 -->
         <article class="card">
+          
           <img
-            src="https://images.pexels.com/photos/10685425/pexels-photo-10685425.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src = "images/9.png"
             alt="Handpan D Kurd"
+            background-size:cover; 
+            background-position:center;"
             class="card-img"
             style="border-radius:0.8rem; margin-bottom:0.6rem;"
           />
@@ -131,8 +146,11 @@
 
         <!-- Modelo 2 -->
         <article class="card">
+          
           <img
-            src="https://images.pexels.com/photos/3824770/pexels-photo-3824770.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src = "images/11.png"
+            background-size:cover; 
+            background-position:center;"
             alt="Handpan Celtic Minor"
             class="card-img"
             style="border-radius:0.8rem; margin-bottom:0.6rem;"
@@ -151,7 +169,7 @@
         <!-- Modelo 3 -->
         <article class="card">
           <img
-            src="https://images.pexels.com/photos/5614633/pexels-photo-5614633.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="images/12.jpg"
             alt="Handpan personalizado"
             class="card-img"
             style="border-radius:0.8rem; margin-bottom:0.6rem;"

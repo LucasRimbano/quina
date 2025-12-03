@@ -786,13 +786,7 @@ body.light-theme .footer-column {
   text-decoration: underline;
 }
 
-/* redes */
-.footer-social-row {
-  display: flex;
-  justify-content: flex-end;  /* botón @ alineado a la derecha */
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
+
 
 .social-btn {
   width: 34px;
@@ -1883,4 +1877,80 @@ body:not(.light-theme) .payment-card {
   background: #020617; /* azul casi negro */
   border-color: rgba(148, 163, 184, 0.35);
   color: #e5e7eb;
+}
+
+/* --------------------------------------------------------
+   SERVICIO WEB PARA EMPRENDEDORES
+-------------------------------------------------------- */
+.section-service {
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding-top: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Grid de 4 servicios (se acomoda solo en mobile) */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+/* Card más sobria, sin colores locos extra */
+.service-card {
+  padding: 1.1rem 1.2rem 1.2rem;
+  border-radius: 1rem;
+}
+
+/* Icono simple arriba */
+.service-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Ajuste de textos */
+.service-card h3 {
+  margin-bottom: 0.35rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Fila final: texto + botón de CTA */
+.service-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.service-cta-text {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Botón reutiliza .btn .btn-primary, solo un ajuste leve de tamaño */
+.service-cta-btn {
+  white-space: nowrap;
+  padding-inline: 1.4rem;
+}
+
+/* Responsive: en pantallas chicas el CTA se apila prolijo */
+@media (max-width: 640px) {
+  .service-cta-row {
+    border-radius: 1rem;
+  }
+
+  .service-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -29,12 +29,10 @@
     <a href="clientes.html" class="btn btn-outline">Comunidad</a>
 
     <!-- NUEVO: página del taller -->
-    <a href="taller.html" class="btn btn-outline">Nuestro taller</a>
+    <a href="taller.html" class="btn btn-primary">Nuestro taller</a>
 
-    <!-- WhatsApp -->
-    <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
-      ✉️ WhatsApp
-    </button>
+    <!-- NUEVO: página del taller -->
+    <a href="ubicacion.html" class="btn btn-outline">ubicacion</a>
 
     <!-- Modo claro/oscuro -->
     <button class="btn btn-outline" id="themeToggle">Modo claro</button>
@@ -111,14 +109,6 @@
     <!-- MODELOS DESTACADOS -->
     <section class="section" id="modelos">
       <div class="section-header">
-        <div>
-          <div class="pill">Modelos destacados</div>
-          <h2 class="section-title">Handpans listos para tocar</h2>
-        </div>
-        <p class="section-subtitle">
-          Ejemplo de cómo tu hermano puede presentar sus afinaciones y configuraciones principales. Después solo
-          tiene que ajustar textos, precios y disponibilidad reales.
-        </p>
       </div>
 
       <div class="grid-cards">
@@ -148,9 +138,9 @@
         <article class="card">
           
           <img
-            src = "images/11.png"
+            src = "images/salidadeaire.jpeg"
             background-size:cover; 
-            background-position:center;"
+            background-position:center;
             alt="Handpan Celtic Minor"
             class="card-img"
             style="border-radius:0.8rem; margin-bottom:0.6rem;"
@@ -182,6 +172,67 @@
           </p>
           <div class="price">
             Proyecto a medida · <strong>charlar por WhatsApp</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+      <section class="section" id="clientes">
+      <div class="section-header">
+        <div>
+          <div class="pill">Clientes</div>
+          <h2 class="section-title">Algunos de los músicos que ya eligieron QUINA</h2>
+        </div>
+      </div>
+
+      <div class="grid-cards">
+        <!-- Cliente 1 -->
+        <article class="card">
+          <img
+            src="images/1.jpg"
+            alt="Cliente 1 con handpan QUINA"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Músico callejero</div>
+          <h3>tocando </h3>
+           <div class="price">
+            Ideal para acompañar <strong>cuencos y voz</strong>.
+          </div>
+        </article>
+
+        <!-- Cliente 2 -->
+        <article class="card">
+          <img
+            src="images/2.jpg"
+            alt="Cliente 2 con handpan QUINA"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Pedinos tu modelo</div>
+          <h3>hacemos modelos unicos </h3>
+          <p>
+            Integra el handpan en relajaciones finales, sesiones de sound healing y meditaciones guiadas,
+            sumando textura sonora suave y envolvente.
+          </p>
+        </article>
+
+        <!-- Cliente 3 -->
+        <article class="card">
+          <img
+            src="images/3.jpg"
+            alt="Cliente 3 con handpan QUINA"
+            class="card-img"
+            style="border-radius:0.8rem; margin-bottom:0.6rem;"
+          />
+          <div class="badge-type">Grabación</div>
+          <h3>Martín — Producción musical</h3>
+          <p>
+            Usa su handpan en estudio para grabar pistas ambientales y texturas para música electrónica,
+            series y piezas audiovisuales.
+          </p>
+          <div class="price">
+            Escalas personalizadas · <strong>handpan a medida</strong>.
           </div>
         </article>
       </div>
@@ -274,36 +325,113 @@
           <h2 class="section-title">Encargá tu handpan o hacé tu consulta</h2>
         </div>
       </div>
-
-      <div class="info-grid">
-        <div class="card info-item">
-          <h4>WhatsApp directo</h4>
-          <p>
-            Número de contacto: <br>
-            <strong>+54 9 11 4160-1929</strong><br><br>
-            <button class="btn btn-primary" onclick="window.open('https://wa.me/541141601929','_blank')">
-              Escribir por WhatsApp
-            </button>
-          </p>
+      <div class="contact-card">
+          <!-- OPCIONES DE PAGO -->
+     
+    <!-- OPCIONES DE PAGO -->
+    <section class="section section-alt" id="pagos">
+      <div class="section-header">
+        <div>
+          <div class="pill">Opciones de pago</div>
+          <h2 class="section-title">Formas de pago aceptadas</h2>
         </div>
+        <p class="section-subtitle">
+          Trabajamos con pagos seguros a través de Mercado Pago y transferencias bancarias.
+          Para reservas, señas o consultas, coordinamos todo por WhatsApp.
+        </p>
+      </div>
 
-        <div class="card info-item">
-          <h4>Instagram</h4>
-          <p>
-            Seguinos en <strong>@quina.handpan</strong> para ver videos, procesos de fabricación,
-            nuevos modelos y disponibilidad actual.
-          </p>
-        </div>
+      <div class="payment-grid">
+        <!-- Card Mercado Pago -->
+        <article class="card payment-card payment-card--mp">
+          <div class="payment-card-header">
+            <!-- IZQUIERDA: LOGO -->
+            <div class="payment-icon">
+              <img src="images/mercadopago.png" alt="Mercado Pago" />
+            </div>
 
-        <div class="card info-item">
-          <h4>Uso de esta página</h4>
-          <p>
-            Esta web es una base que se puede adaptar fácilmente: sumar más modelos, demos de audio,
-            preguntas frecuentes o un formulario de reserva para talleres y clínicas.
+            <!-- CENTRO: TEXTO -->
+            <div class="payment-header-main">
+              <h3>Mercado Pago</h3>
+              <span class="payment-badge">Pago digital</span>
+            </div>
+
+            <!-- DERECHA: ICONO -->
+            <div class="payment-emoji">📱</div>
+          </div>
+
+          <ul class="payment-list">
+            <li>Link de pago enviado por WhatsApp.</li>
+            <li>Acepta tarjetas de crédito, débito y billeteras.</li>
+            <li>Posibilidad de cuotas según promoción vigente.</li>
+          </ul>
+          <p class="payment-note">
+            Una vez elegido el modelo y afinación, te enviamos el link de Mercado Pago
+            para que puedas abonar desde tu celu o PC.
           </p>
-        </div>
+        </article>
+
+        <!-- Card Transferencia bancaria -->
+        <article class="card payment-card payment-card--bank">
+          <div class="payment-card-header">
+            <!-- IZQUIERDA: (si querés más adelante podrías poner logo de banco acá) -->
+            <div class="payment-icon">
+              <img src="images/trasnferencia.jpg" alt="Icono transferencia bancaria" />
+              <!-- De momento vacío o podrías usar un pequeño ícono en PNG -->
+            </div>
+
+            <!-- CENTRO: TEXTO -->
+            <div class="payment-header-main">
+              <h3>Transferencia bancaria</h3>
+              <span class="payment-badge">Cuenta bancaria</span>
+            </div>
+
+            <!-- DERECHA: ICONO -->
+            <div class="payment-emoji">🏦</div>
+          </div>
+
+          <ul class="payment-list">
+            <li>CBU / Alias enviados al confirmar el pedido.</li>
+            <li>Transferencias desde cualquier banco o billetera virtual.</li>
+            <li>Envío de comprobante por WhatsApp o correo.</li>
+          </ul>
+          <p class="payment-note">
+            Ideal para pagos completos o señas. Una vez acreditado el pago, se agenda tu
+            instrumento para fabricación o entrega.
+          </p>
+        </article>
+
+        <!-- Card Reserva / seña -->
+        <article class="card payment-card payment-card--reserve">
+          <div class="payment-card-header">
+            <!-- IZQUIERDA: (acá también podrías poner un logo de calendario más adelante) -->
+            <div class="payment-icon">
+             <img src="images/reserva.jpg" alt="Icono reserva o seña" />
+            </div>
+
+            <!-- CENTRO: TEXTO -->
+            <div class="payment-header-main">
+              <h3>Reserva / seña</h3>
+              <span class="payment-badge">A coordinar</span>
+            </div>
+
+            <!-- DERECHA: ICONO -->
+            <div class="payment-emoji">📝</div>
+          </div>
+
+          <ul class="payment-list">
+            <li>Posibilidad de seña para iniciar la construcción.</li>
+            <li>Saldo a completar antes de la entrega.</li>
+            <li>Plazos y condiciones definidos caso a caso.</li>
+          </ul>
+          <p class="payment-note">
+            Los detalles de seña, tiempos de fabricación y entrega se conversan por WhatsApp,
+            para que el proceso sea claro y cómodo.
+          </p>
+        </article>
       </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -323,29 +451,9 @@
             <li><a href="https://www.instagram.com/quina.handpan" target="_blank">@quina.handpan</a></li>
           </ul>
         </div>
-
-        <div class="footer-column">
-          <h4 class="footer-column-title">Plantillas</h4>
-          <ul class="footer-column-list">
-            <li><a href="index.html">Página demo emprendimientos</a></li>
-            <li><a href="inventario.html">Catálogo + stock</a></li>
-            <li><a href="inventario2.html">Inventario deportivo</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4 class="footer-column-title">Extras</h4>
-          <ul class="footer-column-list">
-            <li><a href="#">Demos de audio (a agregar)</a></li>
-            <li><a href="#">Talleres y clínicas</a></li>
-            <li><a href="#">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
       </div>
 
-      <div class="footer-social-row">
-        <button class="social-btn" aria-label="Instagram">@</button>
-      </div>
+    
 
       <div class="footer-bottom">
         <div class="footer-bottom-left">

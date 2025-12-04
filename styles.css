@@ -1990,3 +1990,81 @@ body:not(.light-theme) .payment-card {
     text-align: center;
   }
 }
+/* ===========================
+   SECCIÓN VIDEO MARTILLANDO
+   =========================== */
+.taller-video-section {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taller-video-inner {
+  width: min(900px, 100% - 2rem);
+  margin-inline: auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Versión modo claro */
+.light-theme .taller-video-inner {
+  background: #f7f7fb;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
+}
+
+.taller-video-title {
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.taller-video-subtitle {
+  font-size: 0.95rem;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+}
+
+.taller-video-frame {
+  margin-top: 0.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  position: relative;
+}
+
+.taller-video-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taller-video-section {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .taller-video-inner {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .taller-video-title {
+    font-size: 1.3rem;
+  }
+
+  .taller-video-subtitle {
+    font-size: 0.9rem;
+  }
+}

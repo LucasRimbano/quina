@@ -2068,3 +2068,100 @@ body:not(.light-theme) .payment-card {
     font-size: 0.9rem;
   }
 }
+
+/* --- Sección servicio colapsable --- */
+.service-toggle-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border, #e0e0e0);
+  background: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.service-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.service-content.is-collapsed {
+  display: none;
+}
+
+.service-content.is-open {
+  display: block;
+  margin-top: 1.5rem;
+}
+/* -----------------------------------------
+   PROCESO ARTESANAL – CARDS CON FOTO DE FONDO
+----------------------------------------- */
+.benefit-card {
+  position: relative;
+  overflow: hidden;
+  /* mantiene tu estilo base de .card pero le sumamos esto */
+}
+
+/* Capa de la imagen de fondo */
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.50;          /* intensidad de la foto */
+  pointer-events: none;
+}
+
+/* Capa de degradado para que el texto se lea bien */
+.benefit-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Aseguramos que el contenido quede por encima de las capas */
+.benefit-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Un poquito más de contraste en el texto si lo necesitás */
+.benefit-card h3,
+.benefit-card p {
+  color: #ffffff;
+}
+
+/* Iconito un poco más marcado */
+.benefit-card .benefit-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* IMÁGENES ESPECÍFICAS PARA CADA BENEFICIO */
+/* Cambiá los nombres de los archivos por los tuyos reales */
+
+.benefit-card--fabricacion::before {
+  background-image: url("images/martillando.jpeg");
+  /* por ejemplo: mano martillando el casco, etc. */
+}
+
+.benefit-card--afinacion::before {
+  background-image: url("images/afinacion.jpg");
+}
+
+.benefit-card--test::before {
+  background-image: url("images/test.jpg");
+}
+
+.benefit-card--cuidado::before {
+  background-image: url("images/mantenimiento.jpg");
+}

@@ -298,8 +298,7 @@
         </div>
       </div>
     </section>
-
-    <!-- PROCESO ARTESANAL -->
+        <!-- PROCESO ARTESANAL -->
     <section class="section">
       <div class="section-header">
         <div>
@@ -309,39 +308,35 @@
       </div>
 
       <div class="benefits">
-        <div class="card">
+        <!-- Tarjeta 1: Fabricación manual -->
+        <article class="card benefit-card benefit-card--fabricacion">
           <div class="benefit-icon">🦾</div>
           <h3>Fabricación manual</h3>
-          <p>
-            Modelado del acero, tratamiento térmico y conformado de cada nota de manera individual
-            para crear un <strong>handpan artesanal</strong> estable.
-          </p>
-        </div>
-        <div class="card">
+        
+        </article>
+
+        <!-- Tarjeta 2: Afinación -->
+        <article class="card benefit-card benefit-card--afinacion">
           <div class="benefit-icon">🎼</div>
           <h3>Afinación por etapas</h3>
-          <p>
-            Afinación inicial, asentamiento del material y microajustes hasta lograr un handpan afinado,
-            estable y listo para grabar o tocar en vivo.
-          </p>
-        </div>
-        <div class="card">
+         
+        </article>
+
+        <!-- Tarjeta 3: Test de sonido -->
+        <article class="card benefit-card benefit-card--test">
           <div class="benefit-icon">🎧</div>
           <h3>Test de sonido real</h3>
-          <p>
-            Pruebas grabadas y tocadas en contexto musical para asegurar un instrumento listo para
-            música meditativa, electrónica, acústica o experimental.
-          </p>
-        </div>
-        <div class="card">
+        </article>
+
+        <!-- Tarjeta 4: Cuidado -->
+        <article class="card benefit-card benefit-card--cuidado">
           <div class="benefit-icon">🧼</div>
           <h3>Cuidado y mantenimiento</h3>
-          <p>
-            Asesoramiento sobre limpieza, protección y transporte para que tu handpan te acompañe muchos años.
-          </p>
-        </div>
+
+        </article>
       </div>
     </section>
+
 
     <!-- FAQ SEO: LONG TAIL -->
     <section class="section" id="faq">
@@ -495,7 +490,7 @@
       </div>
     </section>
 
-    <!-- SERVICIO WEB PARA EMPRENDEDORES -->
+        <!-- SERVICIO WEB PARA EMPRENDEDORES (COLLAPSABLE) -->
     <section class="section section-service" id="servicio-web">
       <div class="section-header">
         <div>
@@ -509,59 +504,75 @@
         </p>
       </div>
 
-      <div class="service-grid">
-        <article class="card service-card">
-          <div class="service-icon">🧩</div>
-          <h3>Diseño adaptable a tu rubro</h3>
-          <p>
-            Reusamos esta estructura y ajustamos la identidad
-            visual a tu marca.
-          </p>
-        </article>
+      <!-- BOTÓN QUE ABRE / CIERRA EL CONTENIDO -->
+      <button
+        class="service-toggle-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="servicio-web-content"
+      >
+        ¿Querés una web como esta? Ver servicio
+      </button>
 
-        <article class="card service-card">
-          <div class="service-icon">📱</div>
-          <h3>Listo para celular y escritorio</h3>
-          <p>
-            Maquetado pensado para verse bien en móvil, tablet y PC. Navegación simple,
-            botones grandes y llamadas a la acción claras para tus clientes.
-          </p>
-        </article>
+      <!-- CONTENIDO QUE SE OCULTA / MUESTRA -->
+      <div id="servicio-web-content" class="service-content is-collapsed">
+        <div class="service-grid">
+          <article class="card service-card">
+            <div class="service-icon">🧩</div>
+            <h3>Diseño adaptable a tu rubro</h3>
+            <p>
+              Reusamos esta estructura y ajustamos la identidad
+              visual a tu marca.
+            </p>
+          </article>
 
-        <article class="card service-card">
-          <div class="service-icon">🛒</div>
-          <h3>Catálogo + contacto directo</h3>
-          <p>
-            Secciones de modelos o productos, método de pago explicado, links directos
-            a WhatsApp, Instagram o el canal que prefieras para cerrar la venta.
-          </p>
-        </article>
+          <article class="card service-card">
+            <div class="service-icon">📱</div>
+            <h3>Listo para celular y escritorio</h3>
+            <p>
+              Maquetado pensado para verse bien en móvil, tablet y PC. Navegación simple,
+              botones grandes y llamadas a la acción claras para tus clientes.
+            </p>
+          </article>
 
-        <article class="card service-card">
-          <div class="service-icon">🛠️</div>
-          <h3>Fácil de mantener</h3>
-          <p>
-            Código limpio en HTML, CSS y JavaScript. Podés versionarlo en GitHub,
-            actualizar textos, precios y fotos sin depender de un panel complicado.
-          </p>
-        </article>
-      </div>
+          <article class="card service-card">
+            <div class="service-icon">🛒</div>
+            <h3>Catálogo + contacto directo</h3>
+            <p>
+              Secciones de modelos o productos, método de pago explicado, links directos
+              a WhatsApp, Instagram o el canal que prefieras para cerrar la venta.
+            </p>
+          </article>
 
-      <div class="service-cta-row">
-        <p class="service-cta-text">
-          ¿Querés usar esta base para tu emprendimiento? Podemos adaptarla con tu logo,
-          y contenidos adaptables a tu negocio.
-        </p>
-        <a
-          href="https://wa.me/541131531916?text=Hola%2C%20quiero%20una%20web%20como%20la%20plantilla%20QUINA%20HANDPAN"
-          class="btn btn-primary service-cta-btn"
-          target="_blank"
-          rel="noopener"
-        >
-          Hablemos de tu web
-        </a>
+          <article class="card service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Enfocada en convertir visitas en clientes</h3>
+            <p>
+               Organizamos tu web con llamadas a la acción claras, secciones ordenadas y
+               mensajes pensados para que quien entra entienda rápido qué ofrecés y te
+               escriba o compre.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="service-cta-row">
+          <p class="service-cta-text">
+            ¿Querés usar esta base para tu emprendimiento? Podemos adaptarla con tu logo,
+            y contenidos adaptables a tu negocio.
+          </p>
+          <a
+            href="https://wa.me/541131531916?text=Hola%2C%20quiero%20una%20web%20como%20la%20plantilla%20QUINA%20HANDPAN"
+            class="btn btn-primary service-cta-btn"
+            target="_blank"
+            rel="noopener"
+          >
+            Hablemos de tu web
+          </a>
+        </div>
       </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -725,6 +736,33 @@
 
       observer.observe(statsSection);
     })();
+
+        // =============================
+    // SECCIÓN SERVICIO: ABRIR / CERRAR
+    // =============================
+    (function () {
+      const toggleBtn = document.querySelector(".service-toggle-btn");
+      const content = document.getElementById("servicio-web-content");
+      if (!toggleBtn || !content) return;
+
+      function setState(isOpen) {
+        content.classList.toggle("is-open", isOpen);
+        content.classList.toggle("is-collapsed", !isOpen);
+        toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        toggleBtn.textContent = isOpen
+          ? "Ocultar información del servicio web"
+          : "¿Querés una web como esta? Ver servicio";
+      }
+
+      // Estado inicial: cerrado
+      setState(false);
+
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = !content.classList.contains("is-open");
+        setState(isOpen);
+      });
+    })();
+
   </script>
 </body>
 </html>

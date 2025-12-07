@@ -2196,3 +2196,55 @@ body:not(.light-theme) .payment-card {
 .benefit-card--cuidado::before {
   background-image: url("images/mantenimiento.jpg");
 }
+
+/* Contenedor de botones flotantes (esquina inferior derecha) */
+.floating-social {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;  /* uno arriba del otro */
+  gap: 0.7rem;             /* separación entre Instagram y WhatsApp */
+  z-index: 999;
+}
+
+/* Estilo base de cada botón redondo */
+.floating-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  background: #ffffff;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Iconos internos (imágenes) */
+.floating-icon {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.floating-icon-svg {
+  width: 60%;
+  height: 60%;
+}
+
+/* Colores específicos */
+.floating-instagram {
+  background: radial-gradient(circle at 30% 30%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.floating-whatsapp {
+  background: #25d366;
+}
+
+/* Hover */
+.floating-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}

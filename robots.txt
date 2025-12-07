@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quina-handpan.vercel.app/sitemap.xml

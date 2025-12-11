@@ -1157,6 +1157,7 @@ body.light-theme .sidecar {
 
   /* Por si alguna otra sección sube demasiado */
   section,
+  .hero,
   .cards-grid {
     margin-top: 0.75rem;
   }
@@ -2005,6 +2006,49 @@ body:not(.light-theme) .payment-card {
   padding-inline: 1.4rem;
 }
 
+/* Contenedor interno del servicio (lo que se abre/cierra) */
+.service-inner {
+  margin-top: 1.8rem;
+}
+
+/* Cuando la sección está colapsada, ocultamos todo menos el botón */
+.section-service.is-collapsed .service-inner {
+  display: none;
+}
+
+/* Opcional: cuando está colapsado, achicamos un poco el espacio arriba */
+.section-service.is-collapsed {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 1.5rem;
+}
+
+/* Si querés asegurar el estilo del botón del servicio */
+.service-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, #6366f1, #ec4899);
+  box-shadow: 0 18px 45px rgba(79, 70, 229, 0.5);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.service-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(79, 70, 229, 0.7);
+}
+
 /* Responsive: en pantallas chicas el CTA se apila prolijo */
 @media (max-width: 640px) {
   .service-cta-row {
@@ -2186,6 +2230,48 @@ body:not(.light-theme) .payment-card {
 /* IMÁGENES ESPECÍFICAS PARA CADA BENEFICIO */
 /* Cambiá los nombres de los archivos por los tuyos reales */
 
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.benefit-card--donde::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/logo-quina.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.20;           /* oscurece un poco */
+  z-index: 0;
+}
+
+
+.benefit-card--creacion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/TapaPegando.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.95;           /* oscurece un poco */
+  z-index: 0;
+}
+
+/* para que el contenido quede por encima de la imagen */
+.benefit-card--fabricacion > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* para que el contenido quede por encima de la imagen */
+.benefit-card--donde > * {
+  position: relative;
+  z-index: 1;
+}
 .benefit-card--fabricacion::before {
   background-image: url("images/martillando.jpeg");
   /* por ejemplo: mano martillando el casco, etc. */
@@ -2253,4 +2339,20 @@ body:not(.light-theme) .payment-card {
 .floating-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}
+/* Tarjetas de PREGUNTAS FRECUENTES */
+.faq-card {
+  background-color: rgba(15, 23, 42, 0.95); /* fondo oscuro sólido */
+  color: #f9fafb;                            /* color de texto por defecto */
+}
+
+/* Título bien blanco, como las cards con imagen */
+.faq-card h3 {
+  color: #f9fafb;
+  font-weight: 700;
+}
+
+/* Párrafo un poquito más suave, pero claro */
+.faq-card p {
+  color: #e5e7eb;
 }

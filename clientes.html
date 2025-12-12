@@ -16,17 +16,62 @@
 <body>
   <div class="page">
     <!-- HEADER -->
-    <header>
-      <div class="logo">
-        QUINA<span>.HANDPAN</span>
-      </div>
-      <div class="header-actions">
-        <a href="kime.html" class="btn btn-primary">Inicio</a>
-        <a href="taller.html" class="btn btn-outline">Taller</a> 
-        <a href="#videos" class="btn btn-outline">Videos</a>
-        <button class="btn btn-outline" id="themeToggle">Modo claro</button>
-      </div>
-    </header>
+       <div class="page">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo-quina.png" alt="Logo QUINA Handpan" class="logo-icon">
+      QUINA<span>.HANDPAN</span>
+    </div>
+
+    <!-- ACCIONES DESKTOP -->
+    <div class="header-actions">
+      <a href="clientes.html" class="btn btn-outline">Comunidad</a>
+      <a href="taller.html" class="btn btn-primary">Nuestro taller</a>
+      <a href="ubicacion.html" class="btn btn-outline">Ubicación</a>
+      <button class="btn btn-outline" id="themeToggle">Modo claro</button>
+    </div>
+
+    <!-- BOTÓN HAMBURGUESA (SOLO MOBILE) -->
+    <button
+      class="hamburger-btn"
+      type="button"
+      aria-label="Abrir menú"
+      aria-controls="mobileDrawer"
+      aria-expanded="false"
+    >
+      <span class="hamburger-icon" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <!-- OVERLAY -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" hidden></div>
+
+  <!-- MENÚ LATERAL MOBILE -->
+  <aside
+    class="mobile-drawer"
+    id="mobileDrawer"
+    aria-label="Menú móvil"
+    aria-hidden="true"
+  >
+    <div class="mobile-drawer-head">
+      <div class="mobile-drawer-title">Menú</div>
+      <button class="mobile-drawer-close" type="button" aria-label="Cerrar menú">
+        ✕
+      </button>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="clientes.html">Comunidad</a>
+      <a href="taller.html">Nuestro taller</a>
+      <a href="ubicacion.html">Ubicación</a>
+
+      <!-- Botón extra para MODO CLARO / OSCURO -->
+      <button class="btn btn-outline mobile-theme-btn" id="themeToggleMobile">
+        Modo claro
+      </button>
+    </nav>
+  </aside>
 
     <!-- HERO (sin reveal) -->
     <section class="hero">
@@ -262,35 +307,39 @@
   </button>
 
   <script>
+    
     // =============================
-    // MODO CLARO / OSCURO
-    // =============================
-    (function () {
-      const body = document.body;
-      const toggle = document.getElementById("themeToggle");
-      const KEY = "site_theme";
+  // MODO CLARO / OSCURO (DESKTOP + MOBILE)
+  // =============================
+  (function () {
+    const body = document.body;
+    const toggleDesktop = document.getElementById("themeToggle");
+    const toggleMobile = document.getElementById("themeToggleMobile");
+    const KEY = "site_theme";
 
-      if (!toggle) return;
+    function applyTheme(theme) {
+      const isLight = theme === "light";
+      body.classList.toggle("light-theme", isLight);
 
-      function applyTheme(theme) {
-        if (theme === "light") {
-          body.classList.add("light-theme");
-          toggle.textContent = "Modo oscuro";
-        } else {
-          body.classList.remove("light-theme");
-          toggle.textContent = "Modo claro";
-        }
-      }
+      const label = isLight ? "Modo oscuro" : "Modo claro";
+      if (toggleDesktop) toggleDesktop.textContent = label;
+      if (toggleMobile) toggleMobile.textContent = label;
+    }
 
-      const saved = localStorage.getItem(KEY) || "dark";
-      applyTheme(saved);
+    // Estado inicial
+    const saved = localStorage.getItem(KEY) || "dark";
+    applyTheme(saved);
 
-      toggle.addEventListener("click", () => {
-        const next = body.classList.contains("light-theme") ? "dark" : "light";
-        applyTheme(next);
-        localStorage.setItem(KEY, next);
-      });
-    })();
+    function toggleTheme() {
+      const next = body.classList.contains("light-theme") ? "dark" : "light";
+      localStorage.setItem(KEY, next);
+      applyTheme(next);
+    }
+
+    if (toggleDesktop) toggleDesktop.addEventListener("click", toggleTheme);
+    if (toggleMobile) toggleMobile.addEventListener("click", toggleTheme);
+  })();
+
 
     // =============================
     // BOTÓN VOLVER ARRIBA
@@ -314,6 +363,52 @@
         });
       });
     })();
+      // =============================
+  // MENÚ HAMBURGUESA (MOBILE)
+  // =============================
+  (function () {
+    const btn = document.querySelector(".hamburger-btn");
+    const drawer = document.getElementById("mobileDrawer");
+    const overlay = document.getElementById("mobileDrawerOverlay");
+    const closeBtn = document.querySelector(".mobile-drawer-close");
+
+    if (!btn || !drawer || !overlay || !closeBtn) return;
+
+    function openDrawer() {
+      drawer.classList.add("is-open");
+      overlay.hidden = false;
+      drawer.setAttribute("aria-hidden", "false");
+      btn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("is-open");
+      overlay.hidden = true;
+      drawer.setAttribute("aria-hidden", "true");
+      btn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    btn.addEventListener("click", () => {
+      const isOpen = drawer.classList.contains("is-open");
+      isOpen ? closeDrawer() : openDrawer();
+    });
+
+    closeBtn.addEventListener("click", closeDrawer);
+    overlay.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeDrawer();
+    });
+
+    // Cerrar al tocar un link del drawer
+    drawer.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if (a) closeDrawer();
+    });
+  })();
+
   </script>
 </body>
 </html>

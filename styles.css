@@ -1384,6 +1384,24 @@ body.light-theme .scroll-top-btn {
   opacity: 1;
   transform: translateY(0);
 }
+/* Oculto por defecto (arriba de todo NO se ve) */
+.scroll-top-btn{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+
+/* Visible cuando el JS agrega .is-visible */
+.scroll-top-btn.is-visible{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+
 /* ===========================
    SECCIÓN TALLER - DOS FOTOS (ESTILO VERSACE)
    =========================== */

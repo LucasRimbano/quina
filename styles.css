@@ -3,7 +3,7 @@
    ======================================================= */
 :root {
   --color-primary: #4f46e5;
-  --color-secondary: #f97316;
+  --color-secondary: #F59E0B; /*#f97316 color naranja anterior*/
 
   /* tema oscuro por defecto */
   --color-bg: #020617;
@@ -1929,34 +1929,40 @@ body.light-theme .site-header {
   align-items: center;
   gap: 0.75rem;
 }
-
-/* =======================================================
-   BOTÓN HAMBURGUESA (MOBILE)
-   ======================================================= */
-
 .hamburger-btn{
-  /* paleta local naranja (solo este botón) */
-  --hb-orange: #f97316;
-  --hb-orange-2: #fb923c;
-  --hb-orange-hover: #ea580c;
+  /* paleta local (solo este botón) */
+  --hb-accent: #f97316;   /* tu naranja */
+  --hb-accent-2: #fb923c;
 
   display: none; /* visible solo en mobile con el @media */
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
 
-  background: linear-gradient(135deg, var(--hb-orange), var(--hb-orange-2));
-  border: 1px solid rgba(249, 115, 22, 0.45);
-  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.32);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  /* Premium: “glass” oscuro por defecto */
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
 .hamburger-btn:hover{
-  background: linear-gradient(135deg, var(--hb-orange-hover), var(--hb-orange));
   transform: translateY(-1px);
-  box-shadow: 0 16px 36px rgba(249, 115, 22, 0.42);
-  filter: saturate(1.05);
+  border-color: rgba(249, 115, 22, 0.55);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+  /* sutil: el naranja aparece como “tinte”, no como relleno sólido */
+  background:
+    radial-gradient(circle at top left, rgba(249,115,22,0.22), transparent 55%),
+    rgba(15, 23, 42, 0.62);
 }
+
+.hamburger-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.40);
+}
+
 
 /* Icono de las 3 rayitas */
 .hamburger-icon {

@@ -90,43 +90,6 @@ body.light-theme .hero-image-inner {
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
 }
 
-/* =======================================================
-   HEADER / NAV
-   ======================================================= */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-/* Estilo general del logo (texto) */
-.logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.logo span {
-  color: var(--color-secondary);
-  font-weight: 400;
-}
-
-/* Solo el logo dentro del header: texto + icono alineados */
-header .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;           /* espacio entre icono y texto */
-}
-
-/* Iconito del logo al lado del texto */
-header .logo-icon {
-  height: 1.1em;         /* altura similar al texto */
-  width: auto;
-  display: block;
-}
-
 /* Links tipo “Clientes reales / Videos en vivo”, etc. */
 .nav-cta a {
   font-size: 0.9rem;
@@ -1103,8 +1066,8 @@ body.light-theme .sidecar {
 /* =======================================================
    RESPONSIVE
    ======================================================= */
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
   /* Evitar scroll horizontal raro en cel */
   html,
   body {
@@ -1114,30 +1077,6 @@ body.light-theme .sidecar {
   /* Un poco menos de margen lateral en toda la página */
   .page {
     padding-inline: 1rem;
-  }
-
-  /* HEADER: logo arriba, botones abajo */
-  header {
-    display: flex;
-    flex-direction: column;   /* Logo arriba, botones abajo */
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 12px 16px;
-  }
-
-  .header-actions {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;   /* 1 botón por fila */
-    gap: 10px;
-  }
-
-  .header-actions .btn {
-    width: 100%;                  /* ocupan todo el ancho */
-    text-align: center;
-    font-size: 0.85rem;
-    padding: 10px 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   }
 
   /* HERO y ABOUT en una sola columna */
@@ -1155,13 +1094,11 @@ body.light-theme .sidecar {
     min-height: 220px;
   }
 
-  /* Por si alguna otra sección sube demasiado */
   section,
   .hero,
   .cards-grid {
     margin-top: 0.75rem;
   }
-
 }
 
 
@@ -1435,29 +1372,7 @@ body.light-theme .scroll-top-btn {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* HEADER STICKY CON BLUR */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.92),
-    rgba(15, 23, 42, 0.7),
-    transparent
-  );
-}
 
-/* en modo claro, un blur más clarito */
-body.light-theme header {
-  background: linear-gradient(
-    to bottom,
-    rgba(249, 250, 251, 0.98),
-    rgba(249, 250, 251, 0.8),
-    transparent
-  );
-}
 /* REVEAL SUAVE EN SCROLL */
 .reveal {
   opacity: 0;
@@ -1940,6 +1855,256 @@ body:not(.light-theme) .payment-card {
   background: #020617; /* azul casi negro */
   border-color: rgba(148, 163, 184, 0.35);
   color: #e5e7eb;
+}
+
+/* =======================================================
+   HEADER / NAV QUINA (LIMPIO)
+   ======================================================= */
+
+/* Estilo general del logo de texto */
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--color-secondary);
+  font-weight: 400;
+}
+
+/* HEADER principal del sitio */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background-image: url("images/bg-dark.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* MODO OSCURO (por defecto) */
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  background-blend-mode: multiply;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+/* MODO CLARO */
+body.light-theme .site-header {
+  background-image: url("images/bg-light.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background: rgba(255, 255, 255, 0.92);
+  background-blend-mode: overlay;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+  color: #111827;
+}
+
+/* Logo dentro del header: icono + texto */
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-header .logo-icon {
+  width: 40px;
+  height: auto;
+  display: block;
+}
+
+/* Contenedor de los botones del header (versión escritorio) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* =======================================================
+   BOTÓN HAMBURGUESA (MOBILE)
+   ======================================================= */
+
+.hamburger-btn{
+  /* paleta local naranja (solo este botón) */
+  --hb-orange: #f97316;
+  --hb-orange-2: #fb923c;
+  --hb-orange-hover: #ea580c;
+
+  display: none; /* visible solo en mobile con el @media */
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, var(--hb-orange), var(--hb-orange-2));
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.32);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.hamburger-btn:hover{
+  background: linear-gradient(135deg, var(--hb-orange-hover), var(--hb-orange));
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(249, 115, 22, 0.42);
+  filter: saturate(1.05);
+}
+
+/* Icono de las 3 rayitas */
+.hamburger-icon {
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: rgb(75, 73, 62);
+  position: relative;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 2px;
+  background: rgb(75, 73, 62);
+}
+.hamburger-icon::before {
+  top: -8px;
+}
+.hamburger-icon::after {
+  top: 8px;
+}
+
+/* =======================================================
+   MENÚ LATERAL (DRAWER) MÓVIL
+   ======================================================= */
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(320px, 86vw);
+
+  /* MODO OSCURO (por defecto) */
+  background: rgba(2, 6, 23, 0.98);
+  color: #f8fafc;
+  border-right: 1px solid rgba(148, 163, 184, 0.18);
+
+  z-index: 60;
+  transform: translateX(-110%);
+  transition: transform 0.28s ease;
+  box-shadow: 18px 0 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.mobile-drawer-title {
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.mobile-drawer-close {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: #f8fafc;
+}
+
+.mobile-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 10px;
+}
+
+.mobile-drawer-nav a {
+  text-decoration: none;
+  color: #f8fafc;
+  padding: 12px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.65);
+}
+
+/* Botón de tema dentro del menú */
+.mobile-theme-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Overlay detrás del menú */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Estado abierto del drawer */
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* =========================
+   MODO CLARO (override)
+   ========================= */
+body.light-theme .mobile-drawer {
+  background: rgba(255, 255, 255, 0.98);
+  color: #111827;
+  border-right: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 18px 0 40px rgba(0, 0, 0, 0.18);
+}
+
+body.light-theme .mobile-drawer-head {
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+body.light-theme .mobile-drawer-title,
+body.light-theme .mobile-drawer-close {
+  color: #111827;
+}
+
+body.light-theme .mobile-drawer-nav a {
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+
+/* =======================================================
+   RESPONSIVE HEADER / NAV
+   ======================================================= */
+
+@media (max-width: 860px) {
+  /* En móvil ocultamos los botones normales
+     y dejamos solo el menú hamburguesa */
+  .header-actions {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* --------------------------------------------------------

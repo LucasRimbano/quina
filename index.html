@@ -159,22 +159,59 @@
         </div>
       </div>
 
-      <!-- COLUMNA DERECHA: FOTO QUINA -->
-      <div class="hero-image">
-        <div class="hero-image-inner hero-image-inner--logo">
-          <img
-            src="images/logo-quina.png"
-            alt="Logo QUINA · HANDPAN, handpan artesanales en Argentina"
-            class="hero-logo-img"
-          />
-          <div class="badge">
-            <div><strong>Handpan hecho a mano</strong> en acero inoxidable</div>
-            <div style="font-size:0.7rem; margin-top:0.2rem;">
-              Cada instrumento es único, construido y afinado nota por nota para lograr un sonido meditativo.
-            </div>
-          </div>
-        </div>
+   <!-- COLUMNA DERECHA: FOTO QUINA -->
+<div class="hero-image">
+  <div class="hero-image-inner hero-image-inner--logo">
+
+    <!-- CARROUSEL LOGOS -->
+    <div class="hero-carousel" id="heroCarousel" aria-label="Carrusel de logos QUINA">
+      <div class="hero-carousel-track">
+        <img
+          src="images/logo-quina.png"
+          alt="Logo QUINA · HANDPAN, handpan artesanales en Argentina"
+          class="hero-logo-img"
+        />
+        <img
+          src="images/logo.png"
+          alt="Logo alternativo QUINA · HANDPAN"
+          class="hero-logo-img"
+        />
       </div>
+
+      <!-- Flechas -->
+      <button
+        class="hero-carousel-btn prev"
+        type="button"
+        aria-label="Imagen anterior"
+      >
+        ‹
+      </button>
+      <button
+        class="hero-carousel-btn next"
+        type="button"
+        aria-label="Imagen siguiente"
+      >
+        ›
+      </button>
+
+      <!-- Dots -->
+      <div class="hero-carousel-dots" aria-hidden="true">
+        <span class="dot is-active"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- BADGE (NO SE TOCA) -->
+    <div class="badge">
+      <div><strong>Handpan hecho a mano</strong> en acero inoxidable</div>
+      <div style="font-size:0.7rem; margin-top:0.2rem;">
+        Cada instrumento es único, construido y afinado nota por nota para lograr un sonido meditativo.
+      </div>
+    </div>
+
+  </div>
+</div>
+
     </section>
 
     <!-- MODELOS DESTACADOS -->
@@ -844,6 +881,61 @@
     // Repetir cada 5 segundos
     setInterval(triggerAnimation, 5000);
   })();
+
+  // =============================
+  // HERO CAROUSEL (2 imágenes) - cada 5s
+  // =============================
+
+  (function () {
+    const root = document.getElementById("heroCarousel");
+    if (!root) return;
+
+    const track = root.querySelector(".hero-carousel-track");
+    const dots = Array.from(root.querySelectorAll(".dot"));
+    const btnPrev = root.querySelector(".hero-carousel-btn.prev");
+    const btnNext = root.querySelector(".hero-carousel-btn.next");
+
+    let index = 0;
+    const total = 2;
+    const intervalMs = 5000;
+    let timer = null;
+
+    function render() {
+      track.style.transform = `translateX(-${index * 100}%)`; // FIX: 0% o 100%
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    }
+
+    function next() {
+      index = (index + 1) % total;
+      render();
+    }
+
+    function prev() {
+      index = (index - 1 + total) % total;
+      render();
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(next, intervalMs);
+    }
+
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    btnNext?.addEventListener("click", () => { next(); start(); });
+    btnPrev?.addEventListener("click", () => { prev(); start(); });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+
+    render();
+    start();
+  })();
+
+
 
 
 </script>

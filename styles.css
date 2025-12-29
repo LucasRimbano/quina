@@ -345,6 +345,96 @@ body.light-theme .badge strong {
 
 
 /* =======================================================
+   HERO: Carrusel de 2 imágenes (FIX ancho completo)
+   ======================================================= */
+
+.hero-carousel{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: 1.3rem;
+  display: grid;
+  place-items: center;
+}
+
+.hero-carousel-track{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .55s ease;
+}
+
+/* Cada imagen = 1 slide completo (100% del contenedor) */
+.hero-carousel-track .hero-logo-img{
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 18px;
+}
+
+/* Botones prev/next */
+.hero-carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+  height: 5%;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.35);
+  background: rgba(15,23,42,.65);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+  opacity: .85;
+}
+
+.hero-carousel-btn:hover{
+  background: rgba(15,23,42,.82);
+  transform: translateY(-50%) scale(1.03);
+  opacity: 1;
+}
+
+.hero-carousel-btn.prev{ left: 10px; }
+.hero-carousel-btn.next{ right: 10px; }
+
+/* Dots */
+.hero-carousel-dots{
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-carousel-dots .dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(229,231,235,.35);
+  border: 1px solid rgba(148,163,184,.35);
+}
+
+.hero-carousel-dots .dot.is-active{
+  background: rgba(249,115,22,.95);
+  border-color: rgba(249,115,22,.75);
+}
+
+@media (max-width: 520px){
+  .hero-carousel-btn{ width: 36px; height: 36px; }
+}
+
+
+/* =======================================================
    SECCIONES / TITULOS
    ======================================================= */
 .section {

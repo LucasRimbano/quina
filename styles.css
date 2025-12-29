@@ -110,6 +110,7 @@ body.light-theme .card.card--highlight{
   background: radial-gradient(circle at top left, #f5f0e6 0%, #ffffff 62%);
   border-color: rgba(161, 98, 7, 0.22); /* dorado suave */
   color: #0f172a;
+  box-shadow: 0 12px 32px rgba(161, 97, 7, 0.568);
 }
 
 
@@ -124,6 +125,7 @@ body.light-theme .card.card--highlight-2{
   );
   border-color: rgba(139, 92, 246, 0.16);
   color: #0f172a;
+  box-shadow:  0 12px 32px rgba(138, 92, 246, 0.589);
 }
 
 
@@ -1623,8 +1625,8 @@ body.light-theme .site-footer {
 /* En modo claro: tarjetas blancas con sombra suave */
 body.light-theme .footer-column {
   background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 14px 30px rgba(15,23,42,0.10);
+  border-color: rgba(155, 92, 192, 0.411);
+  box-shadow: 0 14px 30px rgba(81, 116, 196, 0.76);
 }
 
 .footer-column-title {
@@ -1752,7 +1754,7 @@ body.light-theme .footer-country {
 }
 /* Footer en modo claro: sin recuadro, solo la línea */
 body.light-theme .site-footer {
-  background: transparent;        /* sin fondo */
+  background-image: url(images/footer-bg-light.png);
   box-shadow: none;               /* sin sombra hacia arriba */
 }
 

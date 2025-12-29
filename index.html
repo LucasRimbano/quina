@@ -817,6 +817,35 @@
     });
   })();
 
+  // =============================
+  // ANIMACIÓN CTA CADA 5 SEGUNDOS
+  // =============================
+  (function () {
+    const targets = [
+      document.querySelector(".floating-btn.floating-instagram"),
+      document.querySelector(".floating-btn.floating-whatsapp"),
+      document.getElementById("scrollTopBtn"),
+    ].filter(Boolean);
+
+    if (!targets.length) return;
+
+    function triggerAnimation() {
+      targets.forEach((el) => {
+        // Reinicia la animación
+        el.classList.remove("is-attention");
+        void el.offsetWidth; // fuerza reflow
+        el.classList.add("is-attention");
+      });
+    }
+
+    // Primera animación al cargar
+    setTimeout(triggerAnimation, 1200);
+
+    // Repetir cada 5 segundos
+    setInterval(triggerAnimation, 5000);
+  })();
+
+
 </script>
 
 

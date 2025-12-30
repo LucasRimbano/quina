@@ -411,28 +411,51 @@
 
       <div class="payment-grid">
         <!-- Card Mercado Pago -->
-        <article class="card payment-card payment-card--mp">
-          <div class="payment-card-header">
-            <div class="payment-icon">
-              <img src="images/mercadopago.png" alt="Pago de handpan con Mercado Pago" />
-            </div>
-            <div class="payment-header-main">
-              <h3>Mercado Pago</h3>
-              <span class="payment-badge">Pago digital</span>
-            </div>
-            <div class="payment-emoji">📱</div>
-          </div>
+        <!-- Card Mercado Pago (FLIP) -->
+<article class="card payment-card payment-card--mp payment-flip">
+  <div class="payment-flip-inner">
 
-          <ul class="payment-list">
-            <li>Link de pago enviado por WhatsApp.</li>
-            <li>Acepta tarjetas de crédito, débito y billeteras.</li>
-            <li>Posibilidad de cuotas según promoción vigente.</li>
-          </ul>
-          <p class="payment-note">
-            Una vez elegido el modelo y afinación de tu handpan, te enviamos el link de Mercado Pago
-            para que puedas abonar desde tu celu o PC.
-          </p>
-        </article>
+    <!-- FRONT (lo que ya tenías) -->
+    <div class="payment-face payment-face--front">
+      <div class="payment-card-header">
+        <div class="payment-icon">
+          <img src="images/mercadopago.png" alt="Pago de handpan con Mercado Pago" />
+        </div>
+        <div class="payment-header-main">
+          <h3>Mercado Pago</h3>
+          <span class="payment-badge">Pago digital</span>
+        </div>
+        <div class="payment-emoji">📱</div>
+      </div>
+
+      <ul class="payment-list">
+        <li>Link de pago enviado por WhatsApp.</li>
+        <li>Acepta tarjetas de crédito, débito y billeteras.</li>
+        <li>Posibilidad de cuotas según promoción vigente.</li>
+      </ul>
+
+      <p class="payment-note">
+        Una vez elegido el modelo y afinación, te enviamos el link para abonar desde tu celu o PC.
+      </p>
+    </div>
+
+    <!-- BACK (nueva cara) -->
+    <div class="payment-face payment-face--back">
+      <h3>Mercado Pago</h3>
+      <p style="opacity:.9; line-height:1.5;">
+        Te enviamos el link por WhatsApp. Si querés, te explicamos cuotas y tiempos de entrega.
+      </p>
+
+      <a class="payment-back-cta"
+         href="https://wa.me/541141601929"
+         target="_blank"
+         rel="noopener noreferrer">
+        Pedir link por WhatsApp
+      </a>
+    </div>
+
+  </div>
+</article>
 
         <!-- Card Transferencia bancaria -->
         <article class="card payment-card payment-card--bank">

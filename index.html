@@ -48,6 +48,12 @@
   <meta name="google-site-verification" content="XzSiN7f1UguS0H-2gt2HiH72YJGLXdCocTeSZdXJvLE" />
   <!-- CSS global -->
   <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -114,7 +120,7 @@
     <section class="hero">
       <!-- COLUMNA IZQUIERDA -->
       <div>
-        <h1 class="hero-title">
+        <h1 class="hero-title animate__animated animate__backInLeft">
           Handpan artesanales <span>fabricados en Argentina</span>
         </h1>
         <p class="hero-subtitle">
@@ -295,7 +301,11 @@
           </p>
         </div>
 
-        <div class="card">
+        <div class="card" 
+        data-aos="flip-right"
+         data-aos-easing="ease-out-cubic"
+         data-aos-duration="1200"
+         data-aos-delay="150">
           <div class="benefit-card--creacion">
 
             </div>
@@ -314,27 +324,43 @@
 
       <div class="benefits">
         <!-- Tarjeta 1: Fabricación manual -->
-        <article class="card benefit-card benefit-card--fabricacion">
+        <article class="card benefit-card benefit-card--fabricacion"
+             data-aos="zoom-out-right"
+             data-aos-duration="900"
+             data-aos-easing="ease-out-cubic"
+             data-aos-delay="0">
           <div class="benefit-icon">🦾</div>
           <h3>Fabricación manual</h3>
         
         </article>
 
         <!-- Tarjeta 2: Afinación -->
-        <article class="card benefit-card benefit-card--afinacion">
+        <article class="card benefit-card benefit-card--afinacion"
+             data-aos="zoom-out-right"
+             data-aos-duration="900"
+             data-aos-easing="ease-out-cubic"
+             data-aos-delay="120">
           <div class="benefit-icon">🎼</div>
           <h3>Afinación por etapas</h3>
          
         </article>
 
         <!-- Tarjeta 3: Test de sonido -->
-        <article class="card benefit-card benefit-card--test">
+        <article class="card benefit-card benefit-card--test"
+             data-aos="zoom-out-right"
+             data-aos-duration="900"
+             data-aos-easing="ease-out-cubic"
+             data-aos-delay="240">
           <div class="benefit-icon">🎧</div>
           <h3>Test de sonido real</h3>
         </article>
 
         <!-- Tarjeta 4: Cuidado -->
-        <article class="card benefit-card benefit-card--cuidado">
+        <article class="card benefit-card benefit-card--cuidado"
+             data-aos="zoom-out-right"
+             data-aos-duration="900"
+             data-aos-easing="ease-out-cubic"
+             data-aos-delay="360">
           <div class="benefit-icon">🧼</div>
           <h3>Cuidado y mantenimiento</h3>
 
@@ -677,6 +703,10 @@
     ↑
   </button>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+<script src="https://unpkg.com/scrollreveal"></script>
  <script>
   // =============================
   // MODO CLARO / OSCURO (DESKTOP + MOBILE)
@@ -959,7 +989,30 @@
   })();
 
 
+   AOS.init({
+    once: true,      // anima una sola vez
+    offset: 120,     // dispara un poco antes de entrar en pantalla
+    duration: 900     // cuándo arranca antes de entrar
+  });
 
+
+
+// =============================
+// HEADER BUTTONS: REPLAY CADA 10s
+// =============================
+(function () {
+  const actions = document.querySelector(".header-actions");
+  if (!actions) return;
+
+  function replay() {
+    actions.classList.remove("is-animating");
+    void actions.offsetWidth; // reflow
+    actions.classList.add("is-animating");
+  }
+
+  setTimeout(replay, 300);
+  setInterval(replay, 10000);
+})();
 
 </script>
 

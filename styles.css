@@ -931,8 +931,8 @@ body.light-theme .site-footer {
 .footer-social-row,
 .footer-bottom {
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50px;
+  margin-right: 2px;
 }
 
 /* parte principal con columnas */
@@ -943,6 +943,8 @@ body.light-theme .site-footer {
   gap: 2rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .footer-column {
@@ -2931,3 +2933,18 @@ body.light-theme .payment-face--back{
 
 /* Tip para que si hay iframe o links no “rompan” el flip */
 .payment-face a, .payment-face button { transform: translateZ(0); }
+@keyframes headerBtnsFloatIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header-actions.is-animating .btn{
+  opacity: 0;
+  animation: headerBtnsFloatIn 650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.header-actions.is-animating .btn:nth-child(1){ animation-delay: 0ms; }
+.header-actions.is-animating .btn:nth-child(2){ animation-delay: 90ms; }
+.header-actions.is-animating .btn:nth-child(3){ animation-delay: 180ms; }
+.header-actions.is-animating .btn:nth-child(4){ animation-delay: 270ms; }

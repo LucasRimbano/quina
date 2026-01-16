@@ -2948,3 +2948,79 @@ body.light-theme .payment-face--back{
 .header-actions.is-animating .btn:nth-child(2){ animation-delay: 90ms; }
 .header-actions.is-animating .btn:nth-child(3){ animation-delay: 180ms; }
 .header-actions.is-animating .btn:nth-child(4){ animation-delay: 270ms; }
+/* HISTORIA: la card de imagen necesita altura para que AOS se note */
+#historia .benefit-card--creacion{
+  position: relative;
+  min-height: 320px;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px){
+  #historia .benefit-card--creacion{
+    min-height: 240px;
+  }
+}
+
+/* Texto encima de la foto */
+.creacion-overlay{
+  position: absolute;
+  inset: auto 0 0 0; /* abajo */
+  padding: 1rem;
+  z-index: 2;
+  color: #fff;
+
+  /* vidrio + degradado para leer perfecto */
+  background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0));
+}
+
+.creacion-overlay p{
+  opacity: .9;
+}
+
+
+/* AOS en mobile: evita recortes por overflow en transform/3D */
+@media (max-width: 768px){
+  .card[data-aos]{
+    overflow: visible;
+  }
+}
+/* HISTORIA: el bloque de foto no puede colapsar */
+#historia .benefit-card--creacion{
+  position: relative;
+  min-height: 260px;   /* o 240 si querés más chico */
+  border-radius: 1rem;
+  overflow: hidden;    /* recorta la imagen al borde */
+}
+
+/* Asegurar que el ::before se vea */
+#historia .benefit-card--creacion::before{
+  z-index: 0;
+}
+
+/* El texto encima */
+#historia .creacion-overlay{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  padding: 1rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,.70), rgba(0,0,0,0));
+}
+/* Card de historia con foto: forzar altura */
+#historia .card--media{ padding:0; min-height:260px; }
+#historia .benefit-card--creacion{ min-height:260px; }
+
+/* En móviles, flip 3D puede recortarse si hay overflow hidden en padres */
+@media (max-width: 768px){
+  .card[data-aos="flip-right"]{ overflow: visible; }
+}/* ===========================
+   FIX MOBILE: si AOS no corre, no ocultes nada
+=========================== */
+@media (max-width: 768px){
+  [data-aos]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

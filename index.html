@@ -989,12 +989,21 @@
   })();
 
 
-   AOS.init({
-    once: true,      // anima una sola vez
-    offset: 120,     // dispara un poco antes de entrar en pantalla
-    duration: 900     // cuándo arranca antes de entrar
+   window.addEventListener("load", () => {
+  AOS.init({
+    once: true,
+    offset: 120,
+    duration: 900,
+    easing: "ease-out-cubic",
+    disableMutationObserver: false
   });
 
+  AOS.refreshHard();
+
+  window.addEventListener("orientationchange", () => {
+    setTimeout(() => AOS.refreshHard(), 250);
+  });
+});
 
 
 // =============================

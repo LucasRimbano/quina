@@ -123,7 +123,7 @@
         <h1 class="hero-title animate__animated animate__backInLeft">
           Handpan artesanales <span>fabricados en Argentina</span>
         </h1>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle animate__animated animate__backInRight animate__delay-1s">
           QUINA · HANDPAN se dedica a la creación de <strong>instrumentos handpan artesanales en Argentina</strong>,
           construidos en acero inoxidable y afinados a mano. Cada handpan está pensado para
           <strong>música meditativa</strong> y exploración sonora.
@@ -131,12 +131,12 @@
 
         <div class="hero-tags">
           <span class="tag">Handpan artesanal</span>
-          <span class="tag">Fabricación en Argentina</span>
+         
           <span class="tag">Música meditativa</span>
         </div>
 
         <div class="hero-cta">
-          <a href="#modelos" class="btn btn-primary">
+          <a href="#modelos" class="btn btn-primary js-blur-go">
             Ver modelos de handpan
           </a>
           <a href="#historia" class="btn btn-outline">
@@ -144,9 +144,7 @@
           </a>
         </div>
 
-        <p class="hero-note">
-          QUINA · HANDPAN 🇦🇷 · más de 70 publicaciones mostrando procesos y handpans terminados.
-        </p>
+       
 
         <!-- STATS DEBAJO DEL TEXTO -->
         <div class="stats" id="stats">
@@ -178,7 +176,7 @@
           class="hero-logo-img"
         />
         <img
-          src="images/logo.png"
+          src="images/ChatGPT Image 29 dic 2025, 07_08_48 p.m..png"
           alt="Logo alternativo QUINA · HANDPAN"
           class="hero-logo-img"
         />
@@ -326,7 +324,7 @@
         <!-- Tarjeta 1: Fabricación manual -->
         <article class="card benefit-card benefit-card--fabricacion"
              data-aos="zoom-out-right"
-             data-aos-duration="900"
+             data-aos-duration="800"
              data-aos-easing="ease-out-cubic"
              data-aos-delay="0">
           <div class="benefit-icon">🦾</div>
@@ -337,7 +335,7 @@
         <!-- Tarjeta 2: Afinación -->
         <article class="card benefit-card benefit-card--afinacion"
              data-aos="zoom-out-right"
-             data-aos-duration="900"
+             data-aos-duration="1000"
              data-aos-easing="ease-out-cubic"
              data-aos-delay="120">
           <div class="benefit-icon">🎼</div>
@@ -348,7 +346,7 @@
         <!-- Tarjeta 3: Test de sonido -->
         <article class="card benefit-card benefit-card--test"
              data-aos="zoom-out-right"
-             data-aos-duration="900"
+             data-aos-duration="1200"
              data-aos-easing="ease-out-cubic"
              data-aos-delay="240">
           <div class="benefit-icon">🎧</div>
@@ -358,7 +356,7 @@
         <!-- Tarjeta 4: Cuidado -->
         <article class="card benefit-card benefit-card--cuidado"
              data-aos="zoom-out-right"
-             data-aos-duration="900"
+             data-aos-duration="1600"
              data-aos-easing="ease-out-cubic"
              data-aos-delay="360">
           <div class="benefit-icon">🧼</div>
@@ -429,10 +427,7 @@
           <div class="pill">Opciones de pago</div>
           <h2 class="section-title">Formas de pago para tu handpan</h2>
         </div>
-        <p class="section-subtitle">
-          Trabajamos con pagos seguros a través de Mercado Pago y transferencias bancarias.
-          Para reservas, señas o consultas, coordinamos todo por WhatsApp.
-        </p>
+       
       </div>
 
       <div class="payment-grid">
@@ -550,57 +545,10 @@
         <div class="pill">Servicio</div>
         <h2 class="section-title">Llevamos esta estética a tu emprendimiento</h2>
       </div>
-      <p class="section-subtitle">
-        Esta página es la base para crear la web de tu negocio,
-        ya sea venta de productos, servicios o agenda de turnos. Adaptamos textos, fotos
-        y secciones a tu marca.
-      </p>
-    </div>
-
-    <div class="service-grid">
-      <article class="card service-card">
-        <div class="service-icon">🧩</div>
-        <h3>Diseño adaptable a tu rubro</h3>
-        <p>
-          Reusamos esta estructura y ajustamos la identidad
-          visual a tu marca.
-        </p>
-      </article>
-
-      <article class="card service-card">
-        <div class="service-icon">📱</div>
-        <h3>Listo para celular y escritorio</h3>
-        <p>
-          Maquetado pensado para verse bien en móvil, tablet y PC. Navegación simple,
-          botones grandes y llamadas a la acción claras para tus clientes.
-        </p>
-      </article>
-
-      <article class="card service-card">
-        <div class="service-icon">🛒</div>
-        <h3>Catálogo + contacto directo</h3>
-        <p>
-          Secciones de modelos o productos, método de pago explicado, links directos
-          a WhatsApp, Instagram o el canal que prefieras para cerrar la venta.
-        </p>
-      </article>
-
-      <article class="card service-card">
-        <div class="service-icon">🎯</div>
-        <h3>Enfocada en convertir visitas en clientes</h3>
-        <p>
-          Organizamos tu web con llamadas a la acción claras, secciones ordenadas y
-          mensajes pensados para que quien entra entienda rápido qué ofrecés y te
-          escriba o compre.
-        </p>
-      </article>
     </div>
 
     <div class="service-cta-row">
-      <p class="service-cta-text">
-        ¿Querés usar esta base para tu emprendimiento? Podemos adaptarla con tu logo,
-        y contenidos adaptables a tu negocio.
-      </p>
+    
       <a
         href="https://base-negocio-inventario.vercel.app/servicios.html"
         class="btn btn-primary service-cta-btn"
@@ -1023,6 +971,32 @@
   setInterval(replay, 10000);
 })();
 
+ document.querySelectorAll(".js-blur-go").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const url = btn.getAttribute("href");
+
+      // reinicia animación si ya estaba
+      btn.classList.remove("blur-out-expand");
+      void btn.offsetWidth;
+
+      // dispara animación
+      btn.classList.add("blur-out-expand");
+
+      setTimeout(() => {
+        if (url && url.startsWith("#")) {
+          const target = document.querySelector(url);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.location.href = url;
+        }
+
+        // vuelve el botón visible para futuros clicks
+        btn.classList.remove("blur-out-expand");
+      }, 520);
+    });
+  });
 </script>
 
 

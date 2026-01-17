@@ -3024,3 +3024,24 @@ body.light-theme .payment-face--back{
   }
 }
 
+/* AnimatiSS - blur-out-expand */
+.blur-out-expand{
+  animation: blur-out-expand 0.5s linear both;
+}
+
+@keyframes blur-out-expand{
+  0%{
+    transform: scale(1);
+    filter: blur(.01px);
+  }
+  100%{
+    transform: scale(1.35);
+    filter: blur(12px);
+    opacity: 0;
+  }
+}
+
+/* recomendado: que no se “rompa” tu hover cuando anima */
+.js-blur-go.blur-out-expand{
+  pointer-events: none;
+}

@@ -310,7 +310,9 @@ body.light-theme .card.card--info-gray:hover {
   margin-bottom: 3rem;
 }
 
+
 .hero-title {
+ 
   font-size: clamp(2rem, 3vw + 1rem, 3rem);
   font-weight: 800;
   line-height: 1.1;

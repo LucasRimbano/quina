@@ -226,7 +226,7 @@ body.light-theme .card.card--info-gray:hover {
 }
 
 .header-actions a,
-.footer-bottom-links a,
+ a,
 .footer-column-list a {
   position: relative;
   overflow: hidden;
@@ -234,7 +234,7 @@ body.light-theme .card.card--info-gray:hover {
 
 /* Subrayado animado en links */
 .header-actions a::after,
-.footer-bottom-links a::after,
+ a::after,
 .footer-column-list a::after {
   content: "";
   position: absolute;
@@ -248,7 +248,7 @@ body.light-theme .card.card--info-gray:hover {
 }
 
 .header-actions a:hover::after,
-.footer-bottom-links a:hover::after,
+ a:hover::after,
 .footer-column-list a:hover::after {
   transform: translateX(0);
 }
@@ -1022,22 +1022,9 @@ body.light-theme .social-btn {
   color: var(--color-text);
 }
 
-.footer-bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
 
-.footer-bottom-links a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.8;
-}
 
-.footer-bottom-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
+
 
 /* =======================================================
    SLIDER HERO (flechas)
@@ -1518,22 +1505,8 @@ body.light-theme .footer-country {
   color: #111827;
 }
 
-.footer-bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
 
-.footer-bottom-links a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.8;
-}
 
-.footer-bottom-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
 /* BOTÓN FLOTANTE "VOLVER ARRIBA" */
 .scroll-top-btn {
   position: fixed;
@@ -1886,22 +1859,9 @@ body.light-theme .footer-country {
   color: #111827;
 }
 
-.footer-bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
 
-.footer-bottom-links a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.8;
-}
 
-.footer-bottom-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
+
 /* Footer en modo claro: sin recuadro, solo la línea */
 body.light-theme .site-footer {
   background-image: url(images/footer-bg-light.png);
@@ -3062,4 +3022,26 @@ body.light-theme .payment-face--back{
 
   pointer-events:none;
   z-index:2;
+}
+
+.footer-credit{
+  text-align: center;
+  margin-top: 0.9rem;
+  font-size: 0.68rem;
+  opacity: 0.55;
+  letter-spacing: 0.04em;
+}
+
+.footer-credit a{
+  color: inherit;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+
+.footer-credit a:hover{
+  opacity: 1;
+}
+
+.footer-credit strong{
+  font-weight: 600;
 }

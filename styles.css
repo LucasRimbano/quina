@@ -103,7 +103,7 @@ body.light-theme .hero-image-inner {
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
 }
 body.light-theme .card.card--highlight p{
-  color: rgba(15, 23, 42, 0.78);
+  color: rgb(251, 255, 0);
 }
 
 body.light-theme .card.card--highlight{
@@ -327,29 +327,8 @@ body.light-theme .card.card--info-gray:hover {
   margin-bottom: 1.5rem;
 }
 
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.5rem;
-}
 
-.tag {
-  border-radius: 999px;
-  border: 1px solid #1f2937;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-muted);
-  background: rgba(15, 23, 42, 0.8);
-}
 
-body.light-theme .tag {
-  border-color: #e5e7eb;
-  background: rgba(255, 255, 255, 0.9);
-  color: #6b7280;
-}
 
 .hero-cta {
   display: flex;
@@ -3056,4 +3035,29 @@ body.light-theme .payment-face--back{
   @keyframes shake-vertical{0%,100%{transform:translateY(0)}
   10%,30%,50%,70%{transform:translateY(-8px)}20%,40%,60%{transform:translateY(8px)}
   80%{transform:translateY(8px)}90%{transform:translateY(-8px)}
+}
+/* =======================================================
+   HERO IMAGE – FUSIÓN SUAVE CON FONDO OSCURO
+   ======================================================= */
+
+.hero-image-inner{
+  position: relative;
+  overflow: hidden;
+}
+
+/* capa de fusión */
+.hero-image-inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0) 55%,
+      rgba(2,6,23,0.65) 80%,
+      rgba(2,6,23,1) 100%
+    );
+
+  pointer-events:none;
+  z-index:2;
 }

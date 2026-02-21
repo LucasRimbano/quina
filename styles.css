@@ -1,9 +1,6 @@
-/* =======================================================
-   VARIABLES DE COLOR
-   ======================================================= */
 :root {
   --color-primary: #4f46e5;
-  --color-secondary: #F59E0B; /*#f97316 color naranja anterior*/
+  --color-secondary: #F59E0B; /*#f97316 color naranja anterior */
 
   /* tema oscuro por defecto */
   --color-bg: #020617;
@@ -15,9 +12,9 @@
   --radius-lg: 1rem;
 }
 
-/* =======================================================
+/* 
    RESET BÁSICO
-   ======================================================= */
+*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,7 +25,7 @@ html, body { height: 100%; }
 
 body{
   min-height: 100vh;
-  background-color: var(--color-bg); /* clave: evita el “gris” detrás */
+  background-color: var(--color-bg); 
   color: var(--color-text);
   transition: background 0.3s ease, color 0.3s ease;
 
@@ -43,7 +40,7 @@ body{
   background-repeat: no-repeat, no-repeat;
   background-position: center top, center 12vh;
   background-size: cover, min(900px, 70vw); /* logo grande pero sin estirar infinito */
-  background-attachment: scroll, scroll;   /* si querés “fixed”, te lo ajusto */
+  background-attachment: scroll, scroll;   
 }
 
 a {
@@ -52,16 +49,16 @@ a {
 }
 
 
-/* contenedor principal normal (sin sidecar) */
+
 .page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 3rem;
 }
 
-/* =======================================================
+/* 
    MODO CLARO
-   ======================================================= */
+    */
 body.light-theme {
   background:
     linear-gradient(to bottom, rgba(243,244,246,0.85), rgba(243,244,246,0.95)),
@@ -133,9 +130,9 @@ body.light-theme .card.card--highlight-2 p{
   color: rgba(15, 23, 42, 0.78);
 }
 
-/* =======================================================
+/* 
    CARD HIGHLIGHT SUAVE (para videos / multimedia)
-   ======================================================= */
+    */
 
 body.light-theme .card.card--highlight-soft {
   background: radial-gradient(
@@ -151,9 +148,9 @@ body.light-theme .card.card--highlight-soft {
     0 8px 22px rgba(139, 92, 246, 0.22);
 }
 
-/* =======================================================
+/* 
    CARD HIGHLIGHT SUAVE (para videos / multimedia)
-   ======================================================= */
+    */
 
 body.light-theme .card.card--highlight-soft-2 {
   background: radial-gradient(
@@ -169,9 +166,9 @@ body.light-theme .card.card--highlight-soft-2 {
     0 8px 22px rgba(139, 92, 246, 0.22);
 }
 
-/* =======================================================
+/* 
    CARD INFO GRIS – PROFESIONAL (Cómo llegar)
-   ======================================================= */
+    */
 
 body.light-theme .card.card--info-gray {
   background: linear-gradient(
@@ -210,6 +207,8 @@ body.light-theme .card.card--info-gray:hover {
 }
 
 
+
+
 /* Links tipo “Clientes reales / Videos en vivo”, etc. */
 .nav-cta a {
   font-size: 0.9rem;
@@ -217,25 +216,15 @@ body.light-theme .card.card--info-gray:hover {
   margin-right: 1rem;
 }
 
-/* Botones del lado derecho (Inicio, Taller, Videos, Modo oscuro) */
-.header-actions {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-  font-size: 0.75rem;
-}
-
+/* Links con subrayado animado SOLO en header y footer */
 .header-actions a,
- a,
-.footer-column-list a {
+.footer-column-list a{
   position: relative;
   overflow: hidden;
 }
 
-/* Subrayado animado en links */
 .header-actions a::after,
- a::after,
-.footer-column-list a::after {
+.footer-column-list a::after{
   content: "";
   position: absolute;
   left: 0;
@@ -248,19 +237,12 @@ body.light-theme .card.card--info-gray:hover {
 }
 
 .header-actions a:hover::after,
- a:hover::after,
-.footer-column-list a:hover::after {
+.footer-column-list a:hover::after{
   transform: translateX(0);
 }
-
-/* Para que los botones del header no se corten en desktop */
-.header-actions .btn {
-  white-space: nowrap;
-}
-
-/* =======================================================
+/*
    BOTONES
-   ======================================================= */
+  */
 .btn {
   padding: 0.6rem 1.4rem;
   border-radius: 999px;
@@ -299,9 +281,9 @@ body.light-theme .card.card--info-gray:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* =======================================================
+/* 
    HERO
-   ======================================================= */
+ */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
@@ -353,6 +335,10 @@ body.light-theme .card.card--info-gray:hover {
     radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.6), transparent 50%);
   padding: 0.2rem;
   position: relative;
+  flex: 1;
+  min-height: 260px;
+  display: flex;
+  align-items: stretch;
 }
 
 .hero-image-inner {
@@ -362,8 +348,10 @@ body.light-theme .card.card--info-gray:hover {
   background-repeat: no-repeat;
   min-height: 280px;
   position: relative;
+  z-index: 1;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease;
+  overflow: hidden;
 }
 
 .hero-image-inner:hover {
@@ -388,7 +376,7 @@ body.light-theme .card.card--info-gray:hover {
 
 /* Que la badge del carrusel se vea igual en oscuro y claro */
 .badge {
-  color: #f9fafb;              /* texto siempre clarito */
+  color: #f9fafb;              
 }
 
 /* En modo claro, mantenemos la tarjeta oscura y el título naranja */
@@ -402,9 +390,9 @@ body.light-theme .badge strong {
 }
 
 
-/* =======================================================
+/* 
    HERO: Carrusel de 2 imágenes (FIX ancho completo)
-   ======================================================= */
+   */
 
 .hero-carousel{
   position: relative;
@@ -492,9 +480,9 @@ body.light-theme .badge strong {
 }
 
 
-/* =======================================================
+/* 
    SECCIONES / TITULOS
-   ======================================================= */
+    */
 .section {
   margin: 3rem 0 2.5rem;
 }
@@ -524,9 +512,9 @@ body.light-theme .badge strong {
   color: var(--color-muted);
 }
 
-/* =======================================================
+/* 
    GRID SOBRE NOSOTROS / ABOUT
-   ======================================================= */
+    */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
@@ -535,9 +523,9 @@ body.light-theme .badge strong {
   
 }
 
-/* =======================================================
+/* 
    CARDS GENERALES
-   ======================================================= */
+    */
 .card {
   background: var(--color-card-bg);
   border-radius: 1rem;
@@ -586,9 +574,9 @@ body.light-theme .badge strong {
 
 
 
-/* =======================================================
+/* 
    GRID CARDS PRODUCTOS / SERVICIOS
-   ======================================================= */
+    */
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -611,9 +599,9 @@ body.light-theme .badge strong {
   font-weight: 600;
 }
 
-/* =======================================================
+/* 
    BENEFICIOS
-   ======================================================= */
+   */
 .benefits {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -625,9 +613,9 @@ body.light-theme .badge strong {
   margin-bottom: 0.4rem;
 }
 
-/* =======================================================
+/*
    INFO GRID / CONTACTO
-   ======================================================= */
+ */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -644,9 +632,9 @@ body.light-theme .badge strong {
   color: var(--color-muted);
 }
 
-/* =======================================================
+/*
    TITULOS INVENTARIO
-   ======================================================= */
+   */
 .page-title {
   font-size: 1.7rem;
   font-weight: 800;
@@ -683,9 +671,9 @@ body.light-theme .badge strong {
   color: var(--color-secondary);
 }
 
-/* =======================================================
+/* 
    GRID PRODUCTOS INVENTARIO
-   ======================================================= */
+    */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -817,9 +805,9 @@ body.light-theme .badge strong {
   color: var(--color-muted);
 }
 
-/* =======================================================
+/*
    MENSAJE FINAL INVENTARIO
-   ======================================================= */
+   */
 .mensaje-final {
   margin-top: 2.5rem;
 }
@@ -864,174 +852,13 @@ body.light-theme .badge strong {
   font-size: 0.78rem;
 }
 
-/* =======================================================
-   FOOTER SIMPLE (solo para footers sin clase .site-footer)
-   ======================================================= */
-footer:not(.site-footer) {
-  margin-top: 2rem;
-  padding-top: 1.3rem;
-  border-top: 1px solid #111827;
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.8rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.footer-links a {
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-/* =======================================================
-   FOOTER ESTILO “NIKE”
-   ======================================================= */
-.site-footer {
-  margin-top: 3rem;
-  padding: 2.2rem 0 1.4rem;
-  border-top: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.75);
-  color: var(--color-muted);
-  font-size: 0.82rem;
-  display: block;
-}
-
-body.light-theme .site-footer {
-  background: #111827;
-  color: #e5e7eb;
-}
-
-/* que todo el contenido del footer use el mismo ancho que .page */
-.footer-main,
-.footer-social-row,
-.footer-bottom {
-  max-width: 1100px;
-  margin-left: 50px;
-  margin-right: 2px;
-}
-
-/* parte principal con columnas */
-.footer-main {
-  display: flex;
-  justify-content: flex-start;   /* columnas arrancan a la izquierda */
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.footer-column {
-  background: #000000;
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
-  min-width: 200px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-/* en modo claro también se mantienen negros, solo cambia el fondo del footer */
-body.light-theme .footer-column {
-  background: #000000;
-}
-
-.footer-column-title {
-  font-size: 0.86rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.footer-column-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-column-list li {
-  margin-bottom: 0.25rem;
-}
-
-.footer-column-list a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.9;
-}
-
-.footer-column-list a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-
-
-.social-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.9);
-  background: transparent;
-  color: #e5e7eb;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.15s ease;
-}
-
-body.light-theme .social-btn {
-  border-color: rgba(209, 213, 219, 0.9);
-  color: #f9fafb;
-}
-
-.social-btn:hover {
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-
-/* barra inferior */
-.footer-bottom {
-  border-top: 1px solid rgba(55, 65, 81, 0.9);
-  padding-top: 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.8rem;
-  font-size: 0.78rem;
-}
-
-.footer-bottom-left {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  align-items: center;
-}
-
-.footer-country {
-  padding: 0.1rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.9);
-  font-size: 0.75rem;
-  color: var(--color-text);
-}
 
 
 
 
-
-/* =======================================================
+/* 
    SLIDER HERO (flechas)
-   ======================================================= */
-.hero-image {
-  position: relative;
-}
+    */
 
 .slider-btn {
   position: absolute;
@@ -1070,20 +897,11 @@ body.light-theme .slider-btn {
   transform: translateY(-50%) scale(1.03);
 }
 
-.hero-image-inner {
-  position: relative;
-  z-index: 1;
-}
-/* ===========================
+
+/* 
    CARRUSEL HERO TALLER
-   =========================== */
-.hero-image {
-  position: relative;
-  flex: 1;
-  min-height: 260px;
-  display: flex;
-  align-items: stretch;
-}
+    */
+
 
 .hero-carousel {
   position: relative;
@@ -1174,9 +992,9 @@ body.light-theme .slider-btn {
 }
 
 
-/* =======================================================
+/* 
    SIDECAR IZQUIERDO
-   ======================================================= */
+    */
 .layout-with-sidecar {
   max-width: 1200px;
   margin: 0 auto;
@@ -1245,9 +1063,9 @@ body.light-theme .sidecar {
   margin-top: 0.1rem;
 }
 
-/* =======================================================
+/* 
    RESPONSIVE
-   ======================================================= */
+    */
 
 @media (max-width: 768px) {
   /* Evitar scroll horizontal raro en cel */
@@ -1259,6 +1077,7 @@ body.light-theme .sidecar {
   /* Un poco menos de margen lateral en toda la página */
   .page {
     padding-inline: 1rem;
+    margin-top: -45px;
   }
 
   /* HERO y ABOUT en una sola columna */
@@ -1281,7 +1100,51 @@ body.light-theme .sidecar {
   .cards-grid {
     margin-top: 0.75rem;
   }
+
+  .taller-duo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taller-duo-item {
+    min-height: 260px;
+  }
+
+    .taller-video-section {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .taller-video-inner {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .taller-video-title {
+    font-size: 1.3rem;
+  }
+
+  .taller-video-subtitle {
+    font-size: 0.9rem;
+  }
+
+    #historia .benefit-card--creacion{
+    min-height: 240px;
+  }
+
+    .card[data-aos]{
+    overflow: visible;
+  }
+
+   
+    [data-aos]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  } 
+  
+   
+  
 }
+
 
 
 @media (max-width: 900px) {
@@ -1304,9 +1167,9 @@ body.light-theme .sidecar {
   margin-top: 3rem;
 }
 
-/* =======================================================
+/* 
    BOTÓN FLOTANTE WHATSAPP
-   ======================================================= */
+    */
 .whatsapp-float {
   position: fixed;
   right: 20px;
@@ -1334,19 +1197,10 @@ body.light-theme .sidecar {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
 }
 
-/* en pantallas muy chicas, dale un poquito más de margen para que no tape nada importante */
-@media (max-width: 600px) {
-  .whatsapp-float {
-    right: 16px;
-    bottom: 16px;
-    width: 52px;
-    height: 52px;
-  }
-}
 
-/* =======================================================
+/* 
    EFECTO HOVER EN FOTOS (INVENTARIO + CLIENTES/VIDEOS)
-   ======================================================= */
+    */
 
 /* Todas las imágenes de cards + iframes de videos dentro de cards */
 .card-img,
@@ -1373,137 +1227,6 @@ body.light-theme .sidecar {
   filter: brightness(1.05);
 }
 
-/* ============================
-   FOOTER ESTILO MARCA / NIKE
-   ============================ */
-
-.site-footer {
-  margin-top: auto;                 /* clave: baja el footer al fondo */
-  padding-top: 2.2rem;
-  padding-bottom: 1.4rem;
-  border-top: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.75);  /* banda oscura en modo oscuro */
-  color: var(--color-muted);
-  font-size: 0.82rem;
-}
-
-/* MODO CLARO:
-   - sin fondo sólido, se ve el bg-light
-   - solo una línea suave y texto gris
-*/
-body.light-theme .site-footer {
-  background: transparent;
-  color: #4b5563;
-  border-top: 1px solid rgba(229, 231, 235, 0.8);
-}
-
-/* parte principal con columnas */
-.footer-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer-column-title {
-  font-size: 0.86rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-body.light-theme .footer-column-title {
-  color: #111827;
-}
-
-.footer-column-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-column-list li {
-  margin-bottom: 0.25rem;
-}
-
-.footer-column-list a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.9;
-}
-
-.footer-column-list a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* FILA DE REDES SOCIALES */
-.footer-social-row {
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.social-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,0.9);
-  background: transparent;
-  color: #e5e7eb;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-body.light-theme .social-btn {
-  border-color: rgba(209,213,219,0.9);
-  color: #111827;
-}
-
-.social-btn:hover {
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-
-/* BARRA INFERIOR */
-.footer-bottom {
-  border-top: 1px solid rgba(55,65,81,0.9);
-  padding-top: 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.8rem;
-  font-size: 0.78rem;
-}
-
-/* línea más suave en modo claro */
-body.light-theme .footer-bottom {
-  border-top: 1px solid rgba(229,231,235,0.8);
-}
-
-.footer-bottom-left {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  align-items: center;
-}
-
-.footer-country {
-  padding: 0.1rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,0.9);
-  font-size: 0.75rem;
-  color: var(--color-text);
-}
-
-body.light-theme .footer-country {
-  border-color: #d1d5db;
-  color: #111827;
-}
 
 
 
@@ -1570,9 +1293,9 @@ body.light-theme .scroll-top-btn {
 
 
 
-/* ===========================
+/* 
    SECCIÓN TALLER - DOS FOTOS (ESTILO VERSACE)
-   =========================== */
+    */
 
 .taller-duo-section {
   margin-top: 3rem;
@@ -1623,19 +1346,10 @@ body.light-theme .scroll-top-btn {
   z-index: 1;
 }
 
-/* responsive: en mobile se apilan */
-@media (max-width: 768px) {
-  .taller-duo-grid {
-    grid-template-columns: 1fr;
-  }
 
-  .taller-duo-item {
-    min-height: 260px;
-  }
-}
-/* ===========================
+/* 
    HOVER PARA FOTOS DEL TALLER
-   =========================== */
+    */
 
 /* HERO: solo se puede hacer hover en el slide activo */
 .hero-carousel {
@@ -1652,9 +1366,9 @@ body.light-theme .scroll-top-btn {
   filter: brightness(1.05);
 }
 
-/* ===========================
+/* 
    HOVER EN SECCIÓN ESTILO VERSACE
-   =========================== */
+    */
 
 .taller-duo-item {
   transition: transform 0.45s ease, box-shadow 0.45s ease;
@@ -1690,9 +1404,9 @@ body.light-theme .scroll-top-btn {
   object-fit: contain;
   display: block;
 }
-/* ==========================================
-   FOOTER NUEVO (OSCURE / CLARO)
-   ========================================== */
+/* ===============
+   FOOTER NUEVO 
+   =============== */
 
 /* Banda de fondo del footer */
 .site-footer {
@@ -1717,7 +1431,7 @@ body.light-theme .site-footer {
   );
   color: #4b5563;
   border-top: 1px solid rgba(229,231,235,0.9);
-  box-shadow: 0 -12px 35px rgba(15,23,42,0.08);
+  box-shadow: none;               
 }
 
 /* Contenedor interno alineado con .page */
@@ -1862,21 +1576,11 @@ body.light-theme .footer-country {
 
 
 
-/* Footer en modo claro: sin recuadro, solo la línea */
-body.light-theme .site-footer {
-  background-image: url(images/footer-bg-light.png);
-  box-shadow: none;               /* sin sombra hacia arriba */
-}
 
-/* por si acaso, que el área interior tampoco pinte nada raro */
-body.light-theme .footer-main,
-body.light-theme .footer-social-row,
-body.light-theme .footer-bottom {
-  background: transparent;
-}
-/* =======================================================
+
+/* 
    BARRA DE PROGRESO DE SCROLL
-   ======================================================= */
+    */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -2030,9 +1734,9 @@ body:not(.light-theme) .payment-card {
   color: #e5e7eb;
 }
 
-/* =======================================================
+/* 
    HEADER / NAV QUINA (LIMPIO)
-   ======================================================= */
+    */
 
 /* Estilo general del logo de texto */
 .logo {
@@ -2094,6 +1798,14 @@ body.light-theme .site-header {
   width: 40px;
   height: auto;
   display: block;
+  border-radius: 10px;
+  padding: 2px;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 /* Contenedor de los botones del header (versión escritorio) */
@@ -2103,67 +1815,69 @@ body.light-theme .site-header {
   gap: 0.75rem;
 }
 .hamburger-btn{
-  /* paleta local (solo este botón) */
-  --hb-accent: #f97316;   /* tu naranja */
-  --hb-accent-2: #fb923c;
+ --hb-accent: #f97316;
 
   display: none; /* visible solo en mobile con el @media */
-  padding: 10px 12px;
+  margin-right: -12px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  cursor: pointer;
-
-  /* Premium: “glass” oscuro por defecto */
-  background: rgba(15, 23, 42, 0.55);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+ 
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(15,23,42,0.6);
   backdrop-filter: blur(8px);
 
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  transition: all .25s ease;
 }
 
+/* Hover */
 .hamburger-btn:hover{
+  border-color: rgba(249,115,22,.6);
+  box-shadow: 0 10px 28px rgba(0,0,0,.45);
   transform: translateY(-1px);
-  border-color: rgba(249, 115, 22, 0.55);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
-  /* sutil: el naranja aparece como “tinte”, no como relleno sólido */
-  background:
-    radial-gradient(circle at top left, rgba(249,115,22,0.22), transparent 55%),
-    rgba(15, 23, 42, 0.62);
 }
 
 .hamburger-btn:active{
   transform: translateY(0);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.40);
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
 
-
-/* Icono de las 3 rayitas */
-.hamburger-icon {
-  display: inline-block;
-  width: 26px;
-  height: 2px;
-  background: rgb(75, 73, 62);
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1.6px;
+  background: #f5f5f5;
+  transition: all .3s ease;
   position: relative;
 }
-.hamburger-icon::before,
-.hamburger-icon::after {
-  content: "";
+
+.hamburger-icon::before{
   position: absolute;
-  left: 0;
-  width: 26px;
-  height: 2px;
-  background: rgb(75, 73, 62);
-}
-.hamburger-icon::before {
-  top: -8px;
-}
-.hamburger-icon::after {
-  top: 8px;
+  top: -6px;
 }
 
-/* =======================================================
+.hamburger-icon::after{
+  position: absolute;
+  top: 6px;
+}
+
+.hamburger-btn:hover .hamburger-icon,
+.hamburger-btn:hover .hamburger-icon::before,
+.hamburger-btn:hover .hamburger-icon::after{
+  background: var(--hb-accent);
+  box-shadow: 0 0 6px rgba(73, 53, 38, 0.74);
+}
+/*
    MENÚ LATERAL (DRAWER) MÓVIL
-   ======================================================= */
+   */
 
 .mobile-drawer {
   position: fixed;
@@ -2242,6 +1956,13 @@ body.light-theme .site-header {
   transform: translateX(0);
 }
 
+.mobile-drawer-nav a:hover{
+  border-color: rgba(249,115,22,0.65);
+  background: rgba(249,115,22,0.10);
+  transform: translateX(4px);
+  box-shadow: 0 10px 22px rgba(249,115,22,0.18);
+}
+
 /* =========================
    MODO CLARO (override)
    ========================= */
@@ -2267,10 +1988,17 @@ body.light-theme .mobile-drawer-nav a {
   background: rgba(249, 115, 22, 0.08);
 }
 
+/* Hover con borde más fuerte */
+body.light-theme .mobile-drawer-nav a:hover{
+  border-color: #f97316;
+  background: rgba(249,115,22,0.15);
+  box-shadow: 0 6px 18px rgba(249,115,22,0.25);
+  transform: translateX(4px);
+}
 
-/* =======================================================
+/* 
    RESPONSIVE HEADER / NAV
-   ======================================================= */
+    */
 
 @media (max-width: 860px) {
   /* En móvil ocultamos los botones normales
@@ -2303,19 +2031,19 @@ body.light-theme .mobile-drawer-nav a {
   margin-top: 1.2rem;
 }
 
-/* Card más sobria, sin colores locos extra */
+
 .service-card {
   padding: 1.1rem 1.2rem 1.2rem;
   border-radius: 1rem;
 }
 
-/* Icono simple arriba */
+
 .service-icon {
   font-size: 1.5rem;
   margin-bottom: 0.4rem;
 }
 
-/* Ajuste de textos */
+
 .service-card h3 {
   margin-bottom: 0.35rem;
 }
@@ -2367,7 +2095,6 @@ body.light-theme .mobile-drawer-nav a {
   margin-top: 1.5rem;
 }
 
-/* Si querés asegurar el estilo del botón del servicio */
 .service-toggle-btn {
   display: inline-flex;
   align-items: center;
@@ -2404,9 +2131,9 @@ body.light-theme .mobile-drawer-nav a {
     text-align: center;
   }
 }
-/* ===========================
+/* 
    SECCIÓN VIDEO MARTILLANDO
-   =========================== */
+    */
 .taller-video-section {
   padding: 4rem 0;
   display: flex;
@@ -2463,25 +2190,7 @@ body.light-theme .mobile-drawer-nav a {
   background: #000;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .taller-video-section {
-    padding: 3rem 0 3.5rem;
-  }
 
-  .taller-video-inner {
-    padding: 1.5rem 1rem;
-    border-radius: 16px;
-  }
-
-  .taller-video-title {
-    font-size: 1.3rem;
-  }
-
-  .taller-video-subtitle {
-    font-size: 0.9rem;
-  }
-}
 
   .service-toggle-btn {
   margin-top: 1rem;
@@ -2535,11 +2244,10 @@ body.light-theme .mobile-drawer-nav a {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.50;          /* intensidad de la foto */
+  opacity: 0.50;         
   pointer-events: none;
 }
 
-/* Capa de degradado para que el texto se lea bien */
 .benefit-card::after {
   content: "";
   position: absolute;
@@ -2559,7 +2267,7 @@ body.light-theme .mobile-drawer-nav a {
   z-index: 1;
 }
 
-/* Un poquito más de contraste en el texto si lo necesitás */
+
 .benefit-card h3,
 .benefit-card p {
   color: #ffffff;
@@ -2572,7 +2280,7 @@ body.light-theme .mobile-drawer-nav a {
 }
 
 /* IMÁGENES ESPECÍFICAS PARA CADA BENEFICIO */
-/* Cambiá los nombres de los archivos por los tuyos reales */
+
 
 .card {
   position: relative;
@@ -2588,7 +2296,7 @@ body.light-theme .mobile-drawer-nav a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.20;           /* oscurece un poco */
+  opacity: 0.20;          
   z-index: 0;
 }
 
@@ -2601,7 +2309,7 @@ body.light-theme .mobile-drawer-nav a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.95;           /* oscurece un poco */
+  opacity: 0.95;          
   z-index: 0;
 }
 
@@ -2670,7 +2378,7 @@ body.light-theme .mobile-drawer-nav a {
   height: 60%;
 }
 
-/* Colores específicos */
+
 .floating-instagram {
   background: radial-gradient(circle at 30% 30%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
@@ -2679,7 +2387,7 @@ body.light-theme .mobile-drawer-nav a {
   background: #25d366;
 }
 
-/* Hover */
+
 .floating-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
@@ -2690,59 +2398,23 @@ body.light-theme .mobile-drawer-nav a {
   color: #f9fafb;                            /* color de texto por defecto */
 }
 
-/* Título bien blanco, como las cards con imagen */
+
 .faq-card h3 {
   color: #f9fafb;
   font-weight: 700;
 }
 
-/* Párrafo un poquito más suave, pero claro */
 .faq-card p {
   color: #e5e7eb;
 }
 
-/* Más presencia visual del header en modo claro */
-header{
-  margin-top: 0;
-  padding: 0.85rem 0; /* un poco de alto para que se note */
-   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
 
 
-body.light-theme header{
-  background-image: rgba(255,255,255,0.88);   /* más sólido que tu gradiente */
-  border: 1px solid rgba(229,231,235,0.9);
-  box-shadow: 0 12px 30px rgba(15,23,42,0.10);
-            /* opcional: look “card” */
-}
 
 
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background: rgba(15,23,42,0.85);
-  border-bottom: 1px solid rgba(148,163,184,0.25);
-}
-
-body.light-theme .site-header{
-  background: rgba(255,255,255,0.88);
-  border-bottom: 1px solid rgba(229,231,235,0.9);
-}
-
-.header-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0; /* evita doble espacio */
-}
-
-/* =======================================================
+/* 
    ANIMACIÓN CTA (una sola ejecución)
-   ======================================================= */
+    */
 
 @keyframes attention-pulse {
   0%   { transform: translateY(0) scale(1); }
@@ -2775,9 +2447,9 @@ body.light-theme .site-header{
     animation: none !important;
   }
 }
-/* =======================================================
+/* 
    PAGOS: FLIP 3D EN CARDS (hover desktop + click mobile opcional)
-   ======================================================= */
+    */
 
 .payment-card.payment-flip{
   position: relative;
@@ -2848,8 +2520,8 @@ body.light-theme .payment-face--back{
   padding: 0.7rem 1rem;
   border-radius: 999px;
 
-  /* AZUL PROFESIONAL */
-  border: 1px solid rgba(37, 99, 235, 0.55);     /* azul principal */
+ 
+  border: 1px solid rgba(37, 99, 235, 0.55);    
   background: rgba(37, 99, 235, 0.14);
   color: inherit;
 
@@ -2862,14 +2534,12 @@ body.light-theme .payment-face--back{
     box-shadow .25s ease;
 }
 
-/* Hover: más presencia, pero elegante */
+
 .payment-back-cta:hover{
   background: rgba(37, 99, 235, 0.22);
   box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
   transform: translateY(-1px);
 }
-
-
 
 
 /* Tip para que si hay iframe o links no “rompan” el flip */
@@ -2896,11 +2566,6 @@ body.light-theme .payment-face--back{
   border-radius: 1rem;
 }
 
-@media (max-width: 768px){
-  #historia .benefit-card--creacion{
-    min-height: 240px;
-  }
-}
 
 /* Texto encima de la foto */
 .creacion-overlay{
@@ -2919,12 +2584,7 @@ body.light-theme .payment-face--back{
 }
 
 
-/* AOS en mobile: evita recortes por overflow en transform/3D */
-@media (max-width: 768px){
-  .card[data-aos]{
-    overflow: visible;
-  }
-}
+
 /* HISTORIA: el bloque de foto no puede colapsar */
 #historia .benefit-card--creacion{
   position: relative;
@@ -2951,19 +2611,6 @@ body.light-theme .payment-face--back{
 #historia .card--media{ padding:0; min-height:260px; }
 #historia .benefit-card--creacion{ min-height:260px; }
 
-/* En móviles, flip 3D puede recortarse si hay overflow hidden en padres */
-@media (max-width: 768px){
-  .card[data-aos="flip-right"]{ overflow: visible; }
-}/* ===========================
-   FIX MOBILE: si AOS no corre, no ocultes nada
-=========================== */
-@media (max-width: 768px){
-  [data-aos]{
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
 
 /* AnimatiSS - blur-out-expand */
 .blur-out-expand{
@@ -2987,10 +2634,7 @@ body.light-theme .payment-face--back{
   pointer-events: none;
 }
 /* ----------------------------------------------
-  Generated by AnimatiSS
-  Licensed under FreeBSD License
-  URL: https://xsgames.co/animatiss
-  Twitter: @xsgames_
+    ANIMACIÓN DE SACUDIDA VERTICAL 
 ---------------------------------------------- */
 
 .shake-horizontal{animation:shake-vertical 3.8s linear both}
@@ -2998,14 +2642,10 @@ body.light-theme .payment-face--back{
   10%,30%,50%,70%{transform:translateY(-8px)}20%,40%,60%{transform:translateY(8px)}
   80%{transform:translateY(8px)}90%{transform:translateY(-8px)}
 }
-/* =======================================================
+/* 
    HERO IMAGE – FUSIÓN SUAVE CON FONDO OSCURO
-   ======================================================= */
+    */
 
-.hero-image-inner{
-  position: relative;
-  overflow: hidden;
-}
 
 /* capa de fusión */
 .hero-image-inner::after{

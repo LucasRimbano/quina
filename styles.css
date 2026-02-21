@@ -1141,7 +1141,56 @@ body.light-theme .sidecar {
     transition: none !important;
   } 
   
-   
+   .hero span {
+
+    font-size: 1.4rem;
+   }
+
+  .hero-title {
+    font-size: 1.8rem;        /* antes seguro está en 2.8 / 3rem */
+    line-height: 1.2;
+  }
+  
+  .hero-title span {
+    display: block;           /* evita que se corte feo */
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+  }
+
+  .hero-cta {
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .hero-cta .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+  }
+ 
+  .hero p {
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-right: 5px;
+  }
+  /* ===== STATS MÁS COMPACTOS ===== */
+
+  .stats {
+    margin-top:-5px;
+    gap: 0.6rem;
+  }
+
+  .stat {
+    font-size: 0.8rem;
+  }
+
+  .stat strong {
+    font-size: 1.2rem;
+  }
+
   
 }
 

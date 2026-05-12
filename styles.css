@@ -2734,3 +2734,235 @@ body.light-theme .payment-face--back{
 .footer-credit strong{
   font-weight: 600;
 }
+
+/* ----------------------------------------------
+   MEJORAS DE CONVERSIÓN QUINA
+---------------------------------------------- */
+
+.card,
+.payment-card,
+.footer-column,
+.hero-image,
+.hero-image-inner,
+.hero-carousel,
+.mobile-drawer-nav a {
+  border-radius: 8px;
+}
+
+.hero-note {
+  max-width: 36rem;
+  margin: 0.25rem 0 1rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.hero-carousel-btn {
+  width: 38px;
+  height: 38px;
+}
+
+.grid-cards > .card .card-img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+}
+
+.card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  color: var(--color-secondary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card-link:hover {
+  background: rgba(245, 158, 11, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  transform: translateY(-1px);
+}
+
+.section-buy {
+  padding: 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background:
+    linear-gradient(135deg, rgba(79, 70, 229, 0.14), rgba(245, 158, 11, 0.11)),
+    rgba(2, 6, 23, 0.52);
+  border-radius: 8px;
+}
+
+body.light-theme .section-buy {
+  background:
+    linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(245, 158, 11, 0.12)),
+    rgba(255, 255, 255, 0.82);
+  border-color: rgba(148, 163, 184, 0.28);
+}
+
+.buy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.buy-card {
+  min-height: 190px;
+}
+
+.buy-step {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  font-weight: 800;
+}
+
+.buy-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.34);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+body.light-theme .buy-cta {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.buy-cta strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+.buy-cta p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--color-muted);
+}
+
+.trust-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background:
+    linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(17, 24, 39, 0.72)),
+    url("images/handArbol.jpeg") center / cover;
+  background-blend-mode: multiply;
+}
+
+body.light-theme .trust-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(243, 244, 246, 0.82)),
+    url("images/handArbol.jpeg") center / cover;
+  background-blend-mode: screen;
+}
+
+.trust-panel .section-subtitle {
+  max-width: 42rem;
+  margin-top: 0.35rem;
+}
+
+.trust-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: flex-end;
+}
+
+.footer-text {
+  line-height: 1.5;
+}
+
+.footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.btn-footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.btn-footer--primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+}
+
+.btn-footer--ghost {
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: var(--color-secondary);
+}
+
+.footer-social {
+  margin-top: 0.75rem;
+}
+
+.footer-social a {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.footer-badge {
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 860px) {
+  .buy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buy-cta,
+  .trust-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .buy-cta .btn,
+  .trust-actions,
+  .trust-actions .btn {
+    width: 100%;
+  }
+
+  .trust-actions {
+    justify-content: stretch;
+  }
+}
